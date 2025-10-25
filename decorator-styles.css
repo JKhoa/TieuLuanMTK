@@ -2,34 +2,34 @@
 
 /* CSS Variables for Theme Support */
 :root {
-    --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --text-primary: #ffffff;
-    --accent-primary: #f093fb;
-    --card-bg: rgba(255, 255, 255, 0.95);
-    --border-primary: #e2e8f0;
-    --glow-effect: none;
-    --navbar-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --navbar-border: #f093fb;
-    --search-bg: rgba(255, 255, 255, 0.9);
-    --search-border: #f093fb;
-    --btn-bg: linear-gradient(45deg, #f093fb, #f5576c);
-    --btn-hover-shadow: 0 8px 25px rgba(240, 147, 251, 0.4);
-    --btn-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
-    --stats-bg: linear-gradient(45deg, #4facfe, #00f2fe);
-    --table-bg: rgba(255, 255, 255, 0.95);
-    --table-header-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --table-border: #e2e8f0;
-    --table-hover-bg: rgba(240, 147, 251, 0.1);
-    --nav-link-color: #ffffff;
-    --nav-link-hover-bg: rgba(240, 147, 251, 0.2);
-    --nav-link-hover-color: #f093fb;
-    --gpa-excellent: linear-gradient(45deg, #4facfe, #00f2fe);
-    --gpa-good: linear-gradient(45deg, #f093fb, #f5576c);
-    --gpa-poor: linear-gradient(45deg, #ff6b6b, #ee5a52);
-    --class-badge: linear-gradient(45deg, #667eea, #764ba2);
-    --edit-btn: linear-gradient(45deg, #f093fb, #f5576c);
-    --delete-btn: linear-gradient(45deg, #ff6b6b, #ee5a52);
-    --id-color: #667eea;
+    --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    --text-primary: #ffffff !important;
+    --accent-primary: #f093fb !important;
+    --card-bg: rgba(255, 255, 255, 0.95) !important;
+    --border-primary: #e2e8f0 !important;
+    --glow-effect: none !important;
+    --navbar-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    --navbar-border: #f093fb !important;
+    --search-bg: rgba(255, 255, 255, 0.9) !important;
+    --search-border: #f093fb !important;
+    --btn-bg: linear-gradient(45deg, #f093fb, #f5576c) !important;
+    --btn-hover-shadow: 0 8px 25px rgba(240, 147, 251, 0.4) !important;
+    --btn-shadow: 0 4px 15px rgba(240, 147, 251, 0.3) !important;
+    --stats-bg: linear-gradient(45deg, #4facfe, #00f2fe) !important;
+    --table-bg: rgba(255, 255, 255, 0.95) !important;
+    --table-header-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    --table-border: #e2e8f0 !important;
+    --table-hover-bg: rgba(240, 147, 251, 0.1) !important;
+    --nav-link-color: #ffffff !important;
+    --nav-link-hover-bg: rgba(240, 147, 251, 0.2) !important;
+    --nav-link-hover-color: #f093fb !important;
+    --gpa-excellent: linear-gradient(45deg, #4facfe, #00f2fe) !important;
+    --gpa-good: linear-gradient(45deg, #f093fb, #f5576c) !important;
+    --gpa-poor: linear-gradient(45deg, #ff6b6b, #ee5a52) !important;
+    --class-badge: linear-gradient(45deg, #667eea, #764ba2) !important;
+    --edit-btn: linear-gradient(45deg, #f093fb, #f5576c) !important;
+    --delete-btn: linear-gradient(45deg, #ff6b6b, #ee5a52) !important;
+    --id-color: #667eea !important;
 }
 
 /* Theme-specific styles */
@@ -145,7 +145,7 @@ body {
     color: var(--nav-link-hover-color) !important;
 }
 
-/* GPA Badge Colors */
+/* GPA Badge Colors - Override any existing styles */
 .gpa-excellent {
     background: var(--gpa-excellent) !important;
     color: white !important;
@@ -155,6 +155,7 @@ body {
     font-size: 0.75rem !important;
     font-weight: 600 !important;
     display: inline-block !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
 .gpa-good {
@@ -166,6 +167,7 @@ body {
     font-size: 0.75rem !important;
     font-weight: 600 !important;
     display: inline-block !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
 .gpa-poor {
@@ -177,9 +179,10 @@ body {
     font-size: 0.75rem !important;
     font-weight: 600 !important;
     display: inline-block !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Class Badge */
+/* Class Badge - Override any existing styles */
 .class-badge {
     background: var(--class-badge) !important;
     color: white !important;
@@ -189,9 +192,10 @@ body {
     font-size: 0.75rem !important;
     font-weight: 600 !important;
     display: inline-block !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Action Buttons */
+/* Action Buttons - Override any existing styles */
 .edit-btn {
     background: var(--edit-btn) !important;
     color: white !important;
@@ -199,6 +203,8 @@ body {
     padding: 6px 12px !important;
     border-radius: 6px !important;
     transition: all 0.3s ease !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    cursor: pointer !important;
 }
 
 .edit-btn:hover {
@@ -213,6 +219,8 @@ body {
     padding: 6px 12px !important;
     border-radius: 6px !important;
     transition: all 0.3s ease !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    cursor: pointer !important;
 }
 
 .delete-btn:hover {
@@ -220,7 +228,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* ID Color */
+/* ID Color - Override any existing styles */
 .student-id {
     color: var(--id-color) !important;
     font-weight: 700 !important;
@@ -463,96 +471,96 @@ body {
 
 /* Dark Theme Specific */
 body.dark-theme {
-    --bg-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    --text-primary: #e2e8f0;
-    --accent-primary: #ff6b6b;
-    --card-bg: rgba(30, 41, 59, 0.95);
-    --border-primary: #475569;
-    --navbar-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    --navbar-border: #ff6b6b;
-    --search-bg: rgba(30, 41, 59, 0.9);
-    --search-border: #ff6b6b;
-    --btn-bg: linear-gradient(45deg, #ff6b6b, #ee5a52);
-    --btn-hover-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
-    --btn-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-    --stats-bg: linear-gradient(45deg, #ff6b6b, #ee5a52);
-    --table-bg: rgba(30, 41, 59, 0.95);
-    --table-header-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    --table-border: #475569;
-    --table-hover-bg: rgba(255, 107, 107, 0.1);
-    --nav-link-color: #e2e8f0;
-    --nav-link-hover-bg: rgba(255, 107, 107, 0.1);
-    --nav-link-hover-color: #ff6b6b;
-    --gpa-excellent: linear-gradient(45deg, #10b981, #059669);
-    --gpa-good: linear-gradient(45deg, #f59e0b, #d97706);
-    --gpa-poor: linear-gradient(45deg, #ef4444, #dc2626);
-    --class-badge: linear-gradient(45deg, #3b82f6, #1d4ed8);
-    --edit-btn: linear-gradient(45deg, #f59e0b, #d97706);
-    --delete-btn: linear-gradient(45deg, #ef4444, #dc2626);
-    --id-color: #ff6b6b;
+    --bg-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    --text-primary: #e2e8f0 !important;
+    --accent-primary: #ff6b6b !important;
+    --card-bg: rgba(30, 41, 59, 0.95) !important;
+    --border-primary: #475569 !important;
+    --navbar-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    --navbar-border: #ff6b6b !important;
+    --search-bg: rgba(30, 41, 59, 0.9) !important;
+    --search-border: #ff6b6b !important;
+    --btn-bg: linear-gradient(45deg, #ff6b6b, #ee5a52) !important;
+    --btn-hover-shadow: 0 8px 25px rgba(255, 107, 107, 0.4) !important;
+    --btn-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
+    --stats-bg: linear-gradient(45deg, #ff6b6b, #ee5a52) !important;
+    --table-bg: rgba(30, 41, 59, 0.95) !important;
+    --table-header-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    --table-border: #475569 !important;
+    --table-hover-bg: rgba(255, 107, 107, 0.1) !important;
+    --nav-link-color: #e2e8f0 !important;
+    --nav-link-hover-bg: rgba(255, 107, 107, 0.1) !important;
+    --nav-link-hover-color: #ff6b6b !important;
+    --gpa-excellent: linear-gradient(45deg, #10b981, #059669) !important;
+    --gpa-good: linear-gradient(45deg, #f59e0b, #d97706) !important;
+    --gpa-poor: linear-gradient(45deg, #ef4444, #dc2626) !important;
+    --class-badge: linear-gradient(45deg, #3b82f6, #1d4ed8) !important;
+    --edit-btn: linear-gradient(45deg, #f59e0b, #d97706) !important;
+    --delete-btn: linear-gradient(45deg, #ef4444, #dc2626) !important;
+    --id-color: #ff6b6b !important;
 }
 
 /* Light Theme Specific */
 body.light-theme {
-    --bg-primary: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-    --text-primary: #2d3436;
-    --accent-primary: #fd79a8;
-    --card-bg: rgba(255, 255, 255, 0.95);
-    --border-primary: #ddd;
-    --navbar-bg: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-    --navbar-border: #fd79a8;
-    --search-bg: rgba(255, 255, 255, 0.9);
-    --search-border: #fd79a8;
-    --btn-bg: linear-gradient(45deg, #fd79a8, #e84393);
-    --btn-hover-shadow: 0 8px 25px rgba(253, 121, 168, 0.4);
-    --btn-shadow: 0 4px 15px rgba(253, 121, 168, 0.3);
-    --stats-bg: linear-gradient(45deg, #00b894, #00cec9);
-    --table-bg: rgba(255, 255, 255, 0.95);
-    --table-header-bg: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-    --table-border: #ddd;
-    --table-hover-bg: rgba(253, 121, 168, 0.1);
-    --nav-link-color: #ffffff;
-    --nav-link-hover-bg: rgba(253, 121, 168, 0.2);
-    --nav-link-hover-color: #fd79a8;
-    --gpa-excellent: linear-gradient(45deg, #00b894, #00cec9);
-    --gpa-good: linear-gradient(45deg, #fdcb6e, #e17055);
-    --gpa-poor: linear-gradient(45deg, #e17055, #d63031);
-    --class-badge: linear-gradient(45deg, #74b9ff, #0984e3);
-    --edit-btn: linear-gradient(45deg, #fdcb6e, #e17055);
-    --delete-btn: linear-gradient(45deg, #e17055, #d63031);
-    --id-color: #74b9ff;
+    --bg-primary: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%) !important;
+    --text-primary: #2d3436 !important;
+    --accent-primary: #fd79a8 !important;
+    --card-bg: rgba(255, 255, 255, 0.95) !important;
+    --border-primary: #ddd !important;
+    --navbar-bg: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%) !important;
+    --navbar-border: #fd79a8 !important;
+    --search-bg: rgba(255, 255, 255, 0.9) !important;
+    --search-border: #fd79a8 !important;
+    --btn-bg: linear-gradient(45deg, #fd79a8, #e84393) !important;
+    --btn-hover-shadow: 0 8px 25px rgba(253, 121, 168, 0.4) !important;
+    --btn-shadow: 0 4px 15px rgba(253, 121, 168, 0.3) !important;
+    --stats-bg: linear-gradient(45deg, #00b894, #00cec9) !important;
+    --table-bg: rgba(255, 255, 255, 0.95) !important;
+    --table-header-bg: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%) !important;
+    --table-border: #ddd !important;
+    --table-hover-bg: rgba(253, 121, 168, 0.1) !important;
+    --nav-link-color: #ffffff !important;
+    --nav-link-hover-bg: rgba(253, 121, 168, 0.2) !important;
+    --nav-link-hover-color: #fd79a8 !important;
+    --gpa-excellent: linear-gradient(45deg, #00b894, #00cec9) !important;
+    --gpa-good: linear-gradient(45deg, #fdcb6e, #e17055) !important;
+    --gpa-poor: linear-gradient(45deg, #e17055, #d63031) !important;
+    --class-badge: linear-gradient(45deg, #74b9ff, #0984e3) !important;
+    --edit-btn: linear-gradient(45deg, #fdcb6e, #e17055) !important;
+    --delete-btn: linear-gradient(45deg, #e17055, #d63031) !important;
+    --id-color: #74b9ff !important;
 }
 
 /* Neon Theme Specific */
 body.neon-theme {
-    --bg-primary: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    --text-primary: #00ff41;
-    --accent-primary: #ff0080;
-    --card-bg: rgba(0, 255, 65, 0.1);
-    --border-primary: #00ff41;
-    --glow-effect: 0 0 20px #00ff41;
-    --navbar-bg: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    --navbar-border: #00ff41;
-    --search-bg: rgba(0, 255, 65, 0.1);
-    --search-border: #00ff41;
-    --btn-bg: linear-gradient(45deg, #ff0080, #ff4081);
-    --btn-hover-shadow: 0 8px 25px rgba(255, 0, 128, 0.6);
-    --btn-shadow: 0 4px 15px rgba(255, 0, 128, 0.4);
-    --stats-bg: linear-gradient(45deg, #00ff41, #00e676);
-    --table-bg: rgba(0, 255, 65, 0.1);
-    --table-header-bg: linear-gradient(135deg, #ff0080 0%, #ff4081 100%);
-    --table-border: #00ff41;
-    --table-hover-bg: rgba(255, 0, 128, 0.1);
-    --nav-link-color: #00ff41;
-    --nav-link-hover-bg: rgba(255, 0, 128, 0.1);
-    --nav-link-hover-color: #ff0080;
-    --gpa-excellent: linear-gradient(45deg, #00ff41, #00e676);
-    --gpa-good: linear-gradient(45deg, #ffff00, #ffeb3b);
-    --gpa-poor: linear-gradient(45deg, #ff1744, #f50057);
-    --class-badge: linear-gradient(45deg, #00ffff, #00bcd4);
-    --edit-btn: linear-gradient(45deg, #ffff00, #ffeb3b);
-    --delete-btn: linear-gradient(45deg, #ff1744, #f50057);
-    --id-color: #00ffff;
+    --bg-primary: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) !important;
+    --text-primary: #00ff41 !important;
+    --accent-primary: #ff0080 !important;
+    --card-bg: rgba(0, 255, 65, 0.1) !important;
+    --border-primary: #00ff41 !important;
+    --glow-effect: 0 0 20px #00ff41 !important;
+    --navbar-bg: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) !important;
+    --navbar-border: #00ff41 !important;
+    --search-bg: rgba(0, 255, 65, 0.1) !important;
+    --search-border: #00ff41 !important;
+    --btn-bg: linear-gradient(45deg, #ff0080, #ff4081) !important;
+    --btn-hover-shadow: 0 8px 25px rgba(255, 0, 128, 0.6) !important;
+    --btn-shadow: 0 4px 15px rgba(255, 0, 128, 0.4) !important;
+    --stats-bg: linear-gradient(45deg, #00ff41, #00e676) !important;
+    --table-bg: rgba(0, 255, 65, 0.1) !important;
+    --table-header-bg: linear-gradient(135deg, #ff0080 0%, #ff4081 100%) !important;
+    --table-border: #00ff41 !important;
+    --table-hover-bg: rgba(255, 0, 128, 0.1) !important;
+    --nav-link-color: #00ff41 !important;
+    --nav-link-hover-bg: rgba(255, 0, 128, 0.1) !important;
+    --nav-link-hover-color: #ff0080 !important;
+    --gpa-excellent: linear-gradient(45deg, #00ff41, #00e676) !important;
+    --gpa-good: linear-gradient(45deg, #ff0080, #ff4081) !important;
+    --gpa-poor: linear-gradient(45deg, #ff1744, #f50057) !important;
+    --class-badge: linear-gradient(45deg, #00ffff, #00bcd4) !important;
+    --edit-btn: linear-gradient(45deg, #ff0080, #ff4081) !important;
+    --delete-btn: linear-gradient(45deg, #ff1744, #f50057) !important;
+    --id-color: #00ffff !important;
 }
 
 body.neon-theme .main-container {
