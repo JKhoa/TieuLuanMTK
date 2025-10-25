@@ -19,7 +19,7 @@
     --table-bg: rgba(255, 255, 255, 0.95) !important;
     --table-header-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
     --table-border: #e2e8f0 !important;
-    --table-hover-bg: rgba(240, 147, 251, 0.1) !important;
+    --table-hover-bg: rgba(240, 147, 251, 0.15) !important;
     --nav-link-color: #ffffff !important;
     --nav-link-hover-bg: rgba(240, 147, 251, 0.2) !important;
     --nav-link-hover-color: #f093fb !important;
@@ -56,6 +56,46 @@ body {
 .search-section {
     background: var(--search-bg) !important;
     border: 1px solid var(--search-border) !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin-bottom: 30px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.search-section .form-control {
+    background: var(--search-bg) !important;
+    border: 1px solid var(--search-border) !important;
+    color: var(--text-primary) !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+.search-section .form-control:focus {
+    background: var(--search-bg) !important;
+    border-color: var(--accent-primary) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 0 0 0.2rem rgba(240, 147, 251, 0.25) !important;
+}
+
+.search-section .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.search-section .btn {
+    background: var(--btn-bg) !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: var(--btn-shadow) !important;
+}
+
+.search-section .btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--btn-hover-shadow) !important;
 }
 
 .page-header h1 {
@@ -112,28 +152,37 @@ body {
 .table-custom {
     background: var(--table-bg) !important;
     border: 1px solid var(--table-border) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
 }
 
 .table-custom thead {
     background: var(--table-header-bg) !important;
+    color: white !important;
+}
+
+.table-custom tbody tr {
+    transition: all 0.2s ease !important;
+    background: var(--table-bg) !important;
+    color: var(--text-primary) !important;
+}
+
+.table-custom tbody tr:nth-child(even) {
+    background: var(--table-bg) !important;
+    opacity: 0.95 !important;
 }
 
 .table-custom tbody tr:hover {
     background: var(--table-hover-bg) !important;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.table-custom tbody tr {
-    transition: all 0.2s ease;
-}
-
-.table-custom tbody tr:nth-child(even) {
-    background: var(--table-bg) !important;
+    opacity: 1 !important;
 }
 
 .table-custom tbody tr:nth-child(even):hover {
     background: var(--table-hover-bg) !important;
+    opacity: 1 !important;
 }
 
 .nav-link {
@@ -487,7 +536,7 @@ body.dark-theme {
     --table-bg: rgba(30, 41, 59, 0.95) !important;
     --table-header-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
     --table-border: #475569 !important;
-    --table-hover-bg: rgba(255, 107, 107, 0.1) !important;
+    --table-hover-bg: rgba(255, 107, 107, 0.15) !important;
     --nav-link-color: #e2e8f0 !important;
     --nav-link-hover-bg: rgba(255, 107, 107, 0.1) !important;
     --nav-link-hover-color: #ff6b6b !important;
@@ -518,7 +567,7 @@ body.light-theme {
     --table-bg: rgba(255, 255, 255, 0.95) !important;
     --table-header-bg: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%) !important;
     --table-border: #ddd !important;
-    --table-hover-bg: rgba(253, 121, 168, 0.1) !important;
+    --table-hover-bg: rgba(253, 121, 168, 0.15) !important;
     --nav-link-color: #ffffff !important;
     --nav-link-hover-bg: rgba(253, 121, 168, 0.2) !important;
     --nav-link-hover-color: #fd79a8 !important;
@@ -550,7 +599,7 @@ body.neon-theme {
     --table-bg: rgba(0, 255, 65, 0.1) !important;
     --table-header-bg: linear-gradient(135deg, #ff0080 0%, #ff4081 100%) !important;
     --table-border: #00ff41 !important;
-    --table-hover-bg: rgba(255, 0, 128, 0.1) !important;
+    --table-hover-bg: rgba(255, 0, 128, 0.15) !important;
     --nav-link-color: #00ff41 !important;
     --nav-link-hover-bg: rgba(255, 0, 128, 0.1) !important;
     --nav-link-hover-color: #ff0080 !important;
