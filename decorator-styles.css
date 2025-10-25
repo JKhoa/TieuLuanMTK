@@ -48,6 +48,11 @@
     --btn-warning-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
     --btn-danger-hover-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
     --btn-warning-hover-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+    --btn-outline-bg: transparent;
+    --btn-outline-text: #cbd5e1;
+    --btn-outline-border: #334155;
+    --btn-outline-hover-bg: #1f2937;
+    --btn-outline-hover-text: #ffffff;
 }
 
 /* Theme-specific styles */
@@ -159,6 +164,20 @@ body {
 .page-item.active .page-link {
     background: var(--pagination-active-bg) !important;
     color: var(--pagination-active-text) !important;
+}
+
+/* Outline Button Styles */
+.btn-outline-light {
+    background: var(--btn-outline-bg) !important;
+    color: var(--btn-outline-text) !important;
+    border: 1px solid var(--btn-outline-border) !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-outline-light:hover {
+    background: var(--btn-outline-hover-bg) !important;
+    color: var(--btn-outline-hover-text) !important;
+    border-color: var(--btn-outline-hover-bg) !important;
 }
 
 .btn-custom {
@@ -459,6 +478,11 @@ body.dark-theme {
     --btn-warning-shadow: 0 2px 8px rgba(255, 165, 2, 0.3);
     --btn-danger-hover-shadow: 0 4px 12px rgba(255, 71, 87, 0.4);
     --btn-warning-hover-shadow: 0 4px 12px rgba(255, 165, 2, 0.4);
+    --btn-outline-bg: transparent;
+    --btn-outline-text: #cccccc;
+    --btn-outline-border: #444444;
+    --btn-outline-hover-bg: #222222;
+    --btn-outline-hover-text: #ffffff;
 }
 
 /* Light Theme Specific */
@@ -508,6 +532,11 @@ body.light-theme {
     --btn-warning-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
     --btn-danger-hover-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
     --btn-warning-hover-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+    --btn-outline-bg: #ffffff;
+    --btn-outline-text: #007bff;
+    --btn-outline-border: #007bff;
+    --btn-outline-hover-bg: #007bff;
+    --btn-outline-hover-text: #ffffff;
 }
 
 /* Neon Theme Specific */
@@ -539,6 +568,11 @@ body.neon-theme {
     --btn-warning-shadow: 0 2px 8px rgba(255, 235, 59, 0.5);
     --btn-danger-hover-shadow: 0 4px 12px rgba(255, 23, 68, 0.7);
     --btn-warning-hover-shadow: 0 4px 12px rgba(255, 235, 59, 0.7);
+    --btn-outline-bg: transparent;
+    --btn-outline-text: #00ff00;
+    --btn-outline-border: #00ff00;
+    --btn-outline-hover-bg: #ff00ff;
+    --btn-outline-hover-text: #ffffff;
 }
 
 body.neon-theme .main-container {

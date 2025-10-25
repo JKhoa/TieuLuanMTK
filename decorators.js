@@ -67,7 +67,12 @@ class DarkThemeDecorator {
             btnDangerShadow: '0 2px 8px rgba(255, 71, 87, 0.3)',
             btnWarningShadow: '0 2px 8px rgba(255, 165, 2, 0.3)',
             btnDangerHoverShadow: '0 4px 12px rgba(255, 71, 87, 0.4)',
-            btnWarningHoverShadow: '0 4px 12px rgba(255, 165, 2, 0.4)'
+            btnWarningHoverShadow: '0 4px 12px rgba(255, 165, 2, 0.4)',
+            btnOutlineBg: 'transparent',
+            btnOutlineText: '#cccccc',
+            btnOutlineBorder: '#444444',
+            btnOutlineHoverBg: '#222222',
+            btnOutlineHoverText: '#ffffff'
         };
     }
 }
@@ -126,7 +131,12 @@ class LightThemeDecorator {
             btnDangerShadow: '0 2px 8px rgba(220, 53, 69, 0.3)',
             btnWarningShadow: '0 2px 8px rgba(255, 193, 7, 0.3)',
             btnDangerHoverShadow: '0 4px 12px rgba(220, 53, 69, 0.4)',
-            btnWarningHoverShadow: '0 4px 12px rgba(255, 193, 7, 0.4)'
+            btnWarningHoverShadow: '0 4px 12px rgba(255, 193, 7, 0.4)',
+            btnOutlineBg: '#ffffff',
+            btnOutlineText: '#007bff',
+            btnOutlineBorder: '#007bff',
+            btnOutlineHoverBg: '#007bff',
+            btnOutlineHoverText: '#ffffff'
         };
     }
 }
@@ -186,7 +196,12 @@ class NeonThemeDecorator {
             btnDangerShadow: '0 2px 8px rgba(255, 23, 68, 0.5)',
             btnWarningShadow: '0 2px 8px rgba(255, 235, 59, 0.5)',
             btnDangerHoverShadow: '0 4px 12px rgba(255, 23, 68, 0.7)',
-            btnWarningHoverShadow: '0 4px 12px rgba(255, 235, 59, 0.7)'
+            btnWarningHoverShadow: '0 4px 12px rgba(255, 235, 59, 0.7)',
+            btnOutlineBg: 'transparent',
+            btnOutlineText: '#00ff00',
+            btnOutlineBorder: '#00ff00',
+            btnOutlineHoverBg: '#ff00ff',
+            btnOutlineHoverText: '#ffffff'
         };
     }
 }
@@ -478,6 +493,11 @@ class ThemeManager {
         root.style.removeProperty('--pagination-hover-bg');
         root.style.removeProperty('--pagination-active-bg');
         root.style.removeProperty('--pagination-active-text');
+        root.style.removeProperty('--btn-outline-bg');
+        root.style.removeProperty('--btn-outline-text');
+        root.style.removeProperty('--btn-outline-border');
+        root.style.removeProperty('--btn-outline-hover-bg');
+        root.style.removeProperty('--btn-outline-hover-text');
         
         // Force style recalculation
         document.body.offsetHeight;
@@ -537,6 +557,11 @@ class ThemeManager {
             if (theme.btnWarningShadow) root.style.setProperty('--btn-warning-shadow', theme.btnWarningShadow);
             if (theme.btnDangerHoverShadow) root.style.setProperty('--btn-danger-hover-shadow', theme.btnDangerHoverShadow);
             if (theme.btnWarningHoverShadow) root.style.setProperty('--btn-warning-hover-shadow', theme.btnWarningHoverShadow);
+            if (theme.btnOutlineBg) root.style.setProperty('--btn-outline-bg', theme.btnOutlineBg);
+            if (theme.btnOutlineText) root.style.setProperty('--btn-outline-text', theme.btnOutlineText);
+            if (theme.btnOutlineBorder) root.style.setProperty('--btn-outline-border', theme.btnOutlineBorder);
+            if (theme.btnOutlineHoverBg) root.style.setProperty('--btn-outline-hover-bg', theme.btnOutlineHoverBg);
+            if (theme.btnOutlineHoverText) root.style.setProperty('--btn-outline-hover-text', theme.btnOutlineHoverText);
         }, 50);
     }
     
