@@ -33,6 +33,28 @@ python app.py
 3. **Truy cập web app:**
 Mở trình duyệt và truy cập: `http://localhost:5000`
 
+### Triển khai GitHub Pages (Frontend tĩnh)
+
+Repo đã được cấu hình để xuất bản GitHub Pages từ nhánh `main` tại thư mục gốc (root).
+
+- URL dự kiến: `https://jkhoa.github.io/TieuLuanMTK/`
+- Frontend tĩnh (`index.html`, `script.js`, `style.css`, `components/*`) sẽ được phục vụ trực tiếp.
+
+Lưu ý về backend/API:
+- GitHub Pages chạy trên HTTPS. Trình duyệt sẽ chặn gọi API HTTP (mixed content) đến `http://localhost:8080`.
+- Bạn có 3 cách để dùng được API từ trang Pages:
+	1) Triển khai backend có HTTPS (Render/Railway/Fly/…); sau đó mở trang với tham số `?api=https://your-api.example.com`
+	2) Dùng tunnel HTTPS cho server local (ngrok/Cloudflare Tunnel) rồi dùng `?api=https://<public-tunnel>`
+	3) Phát triển cục bộ: chạy `run_ui.bat` để mở UI tĩnh tại `http://localhost:5500` (không có mixed content) khi backend chạy `http://localhost:8080`.
+
+`script.js` hỗ trợ override API:
+
+```
+https://jkhoa.github.io/TieuLuanMTK/?api=https://your-api.example.com
+```
+
+Hoặc lưu cố định qua LocalStorage (tự động khi dùng `?api=` lần đầu).
+
 ## 📁 Cấu trúc project
 
 ```
@@ -41,6 +63,10 @@ Mở trình duyệt và truy cập: `http://localhost:5000`
 ├── templates/
 │   └── index.html        # Giao diện web chính
 └── students.db           # SQLite database
+├── index.html             # Frontend tĩnh cho GitHub Pages
+├── script.js              # Logic UI + gọi API (hỗ trợ ?api= override)
+├── style.css              # Styles chung + dark theme
+├── components/            # Web components (navbar/footer/statusbar)
 ```
 
 ## 🎯 API Endpoints
