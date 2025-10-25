@@ -12,14 +12,14 @@
 
 /* Theme-specific styles */
 body {
-    background: var(--bg-primary);
-    color: var(--text-primary);
+    background: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
     transition: all 0.3s ease;
 }
 
 .main-container {
-    background: var(--card-bg);
-    border: 1px solid var(--border-primary);
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-primary) !important;
 }
 
 /* Toast Notifications */
@@ -259,30 +259,30 @@ body {
 
 /* Dark Theme Specific */
 body.dark-theme {
-    --bg-primary: #000000;
-    --text-primary: #ffffff;
-    --accent-primary: #ff6b6b;
-    --card-bg: rgba(0, 0, 0, 0.9);
-    --border-primary: #333333;
+    --bg-primary: #000000 !important;
+    --text-primary: #ffffff !important;
+    --accent-primary: #ff6b6b !important;
+    --card-bg: rgba(0, 0, 0, 0.9) !important;
+    --border-primary: #333333 !important;
 }
 
 /* Light Theme Specific */
 body.light-theme {
-    --bg-primary: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    --text-primary: #212529;
-    --accent-primary: #007bff;
-    --card-bg: rgba(255, 255, 255, 0.95);
-    --border-primary: #dee2e6;
+    --bg-primary: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+    --text-primary: #212529 !important;
+    --accent-primary: #007bff !important;
+    --card-bg: rgba(255, 255, 255, 0.95) !important;
+    --border-primary: #dee2e6 !important;
 }
 
 /* Neon Theme Specific */
 body.neon-theme {
-    --bg-primary: #0a0a0a;
-    --text-primary: #00ff00;
-    --accent-primary: #ff00ff;
-    --card-bg: rgba(0, 255, 0, 0.1);
-    --border-primary: #00ff00;
-    --glow-effect: 0 0 20px #00ff00;
+    --bg-primary: #0a0a0a !important;
+    --text-primary: #00ff00 !important;
+    --accent-primary: #ff00ff !important;
+    --card-bg: rgba(0, 255, 0, 0.1) !important;
+    --border-primary: #00ff00 !important;
+    --glow-effect: 0 0 20px #00ff00 !important;
 }
 
 body.neon-theme .main-container {
