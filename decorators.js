@@ -69,9 +69,9 @@ class DarkThemeDecorator {
             btnDangerHoverShadow: '0 4px 12px rgba(255, 71, 87, 0.4)',
             btnWarningHoverShadow: '0 4px 12px rgba(255, 165, 2, 0.4)',
             btnOutlineBg: 'transparent',
-            btnOutlineText: '#0066cc',
-            btnOutlineBorder: '#0066cc',
-            btnOutlineHoverBg: '#0066cc',
+            btnOutlineText: '#00bfff',
+            btnOutlineBorder: '#00bfff',
+            btnOutlineHoverBg: '#00bfff',
             btnOutlineHoverText: '#ffffff'
         };
     }
@@ -133,9 +133,9 @@ class LightThemeDecorator {
             btnDangerHoverShadow: '0 4px 12px rgba(220, 53, 69, 0.4)',
             btnWarningHoverShadow: '0 4px 12px rgba(255, 193, 7, 0.4)',
             btnOutlineBg: '#ffffff',
-            btnOutlineText: '#0066cc',
-            btnOutlineBorder: '#0066cc',
-            btnOutlineHoverBg: '#0066cc',
+            btnOutlineText: '#00bfff',
+            btnOutlineBorder: '#00bfff',
+            btnOutlineHoverBg: '#00bfff',
             btnOutlineHoverText: '#ffffff'
         };
     }
@@ -198,9 +198,9 @@ class NeonThemeDecorator {
             btnDangerHoverShadow: '0 4px 12px rgba(255, 23, 68, 0.7)',
             btnWarningHoverShadow: '0 4px 12px rgba(255, 235, 59, 0.7)',
             btnOutlineBg: 'transparent',
-            btnOutlineText: '#0066cc',
-            btnOutlineBorder: '#0066cc',
-            btnOutlineHoverBg: '#0066cc',
+            btnOutlineText: '#00bfff',
+            btnOutlineBorder: '#00bfff',
+            btnOutlineHoverBg: '#00bfff',
             btnOutlineHoverText: '#ffffff'
         };
     }
