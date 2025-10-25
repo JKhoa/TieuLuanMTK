@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Manager - Web Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        
+        .main-container {
+            background: rgba(30, 41, 59, 0.98);
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            margin: 20px auto;
+            padding: 32px;
+            backdrop-filter: blur(20px);
+            border: 1px solid #334155;
+        }
+        
+        /* Navigation Styles */
+        .navbar {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+            border-radius: 12px !important;
+            padding: 16px 24px !important;
+            border: 1px solid #475569;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem !important;
+            font-weight: 700 !important;
+            color: #ffffff !important;
+        }
+        
+        .nav-link {
+            font-weight: 500 !important;
+            padding: 8px 16px !important;
+            border-radius: 8px !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .nav-link:hover {
+            background: rgba(102, 126, 234, 0.1) !important;
+            color: #667eea !important;
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(45deg, #667eea, #764ba2) !important;
+            color: white !important;
+        }
+        
+        /* Page Header */
+        .page-header {
+            margin-bottom: 32px;
+        }
+        
+        .page-header h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .page-header p {
+            color: #94a3b8;
+            font-size: 1.125rem;
+            margin: 0;
+        }
+        
+        /* Search Section */
+        .search-section {
+            background: #0f172a; /* unify with table surface */
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+            border: 1px solid #334155;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Button Styles */
+        .btn-custom {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+        
+        .btn-outline-light {
+            border: 1px solid #475569;
+            color: #cbd5e1;
+            background: transparent;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-light:hover {
+            background: #475569;
+            color: white;
+            border-color: #475569;
+        }
+        
+        .btn-danger-custom {
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+            border: none;
+            border-radius: 6px;
+            padding: 6px 12px;
+            color: white;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+        }
+        
+        .btn-danger-custom:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+            color: white;
+        }
+        
+        .btn-warning-custom {
+            background: linear-gradient(45deg, #f59e0b, #d97706);
+            border: none;
+            border-radius: 6px;
+            padding: 6px 12px;
+            color: white;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+        }
+        
+        .btn-warning-custom:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+            color: white;
+        }
+        
+        /* Table Styles */
+        .table-custom {
+            background: #0f172a; /* unified dark surface */
+            /* Force Bootstrap table tokens to our palette */
+            --bs-table-bg: #0f172a;
+            --bs-table-striped-bg: #0f172a;
+            --bs-table-hover-bg: #1f2937;
+            --bs-table-color: #e2e8f0;
+            --bs-table-border-color: #334155;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid #334155; /* consistent border */
+        }
+        
+        .table-custom thead {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); /* unified brand */
+            color: white;
+        }
+        
+        .table-custom th {
+            border: none;
+            padding: 16px 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.8rem;
+            text-align: left;
+        }
+        
+        .table-custom td {
+            border: none;
+            padding: 16px 20px;
+            vertical-align: middle;
+            border-bottom: 1px solid #334155; /* softer row separators */
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            background-color: transparent; /* ensure no white cell bg leaks */
+        }
+        
+        .table-custom tbody tr {
+            background: #0f172a; /* same as table surface */
+            color: #e2e8f0;
+            transition: all 0.2s ease;
+        }
+        
+        .table-custom tbody tr:nth-child(even) {
+            background: #0f172a; /* remove alternating tone to avoid patchy color */
+        }
+        
+        .table-custom tbody tr:hover {
+            background: #1f2937; /* single hover tone */
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .table-custom tbody tr:nth-child(even):hover {
+            background: #1f2937;
+        }
+        
+        .modal-content {
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            background: #1e293b;
+            color: #e2e8f0;
+        }
+        
+        .modal-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 20px 20px 0 0;
+            border: none;
+        }
+        
+        /* Form Controls */
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #334155;
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+            background: #0f172a; /* match surface */
+            color: #e2e8f0;
+            font-size: 0.9rem;
+        }
+        
+        .form-control:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+            background: #0f172a;
+            color: #e2e8f0;
+            outline: none;
+        }
+        
+        .form-control::placeholder {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Pagination unify */
+        .page-item .page-link {
+            background: #0f172a;
+            border-color: #334155;
+            color: #e2e8f0;
+        }
+        .page-item .page-link:hover {
+            background: #1f2937;
+            border-color: #334155;
+            color: #fff;
+        }
+        .page-item.active .page-link {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            border-color: transparent;
+            color: #fff;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+        }
+        
+        .alert-custom {
+            border-radius: 15px;
+            border: none;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+        }
+        
+        .stats-card {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .stats-card h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #475569;
+            color: #94a3b8;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .spinner-border {
+            color: #667eea;
+        }
+
+        /* Inline style cleanups */
+        .navbar-dark-soft {
+            background: #0f172a; /* unify surface */
+            border-radius: 15px;
+            padding: 15px 25px;
+            border: 1px solid #334155;
+        }
+        .search-icon {
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            z-index: 10;
+        }
+        .muted-info {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="main-container">
+                    <!-- Navigation Header -->
+                    <nav class="navbar navbar-expand-lg mb-4 navbar-dark-soft">
+                        <div class="container-fluid">
+                            <a class="navbar-brand text-white fw-bold" href="#">
+                                <i class="fas fa-graduation-cap me-2"></i>EduSync Manager
+                            </a>
+                            <div class="navbar-nav ms-auto">
+                                <a class="nav-link text-light me-3" href="#">Dashboard</a>
+                                <a class="nav-link text-white fw-bold active" href="#">Students</a>
+                                <a class="nav-link text-light ms-3" href="#">Analytics</a>
+                            </div>
+                            <div class="ms-3">
+                                <button class="btn btn-outline-light btn-sm">Dark Mode</button>
+                            </div>
+                        </div>
+                    </nav>
+                    
+                    <!-- Page Header -->
+                    <div class="page-header d-flex justify-content-between align-items-center">
+                        <div>
+                            <h1>Student Management</h1>
+                            <p>Manage your students efficiently</p>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <button class="btn btn-custom" onclick="addStudent()">
+                                <i class="fas fa-plus"></i>Add Student
+                            </button>
+                            <button class="btn btn-custom" onclick="exportData()">
+                                <i class="fas fa-download"></i>Export
+                            </button>
+                            <button class="btn btn-custom" onclick="loadStudents()">
+                                <i class="fas fa-sync-alt"></i>Refresh
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="stats-card">
+                                <h3 id="totalStudents">0</h3>
+                                <p><i class="fas fa-users"></i> Tổng số sinh viên</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stats-card">
+                                <h3 id="avgGPA">0.0</h3>
+                                <p><i class="fas fa-chart-line"></i> GPA trung bình</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stats-card">
+                                <h3 id="totalClasses">0</h3>
+                                <p><i class="fas fa-school"></i> Số lớp học</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Search and Filter Section -->
+                    <div class="search-section">
+                        <div class="row align-items-end">
+                            <div class="col-md-8">
+                                <div class="position-relative">
+                                    <i class="fas fa-search position-absolute search-icon"></i>
+                                    <input type="text" class="form-control ps-5" id="searchInput" 
+                                           placeholder="Search students...">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control" id="classFilter" aria-label="Filter by class" title="Filter by class">
+                                    <option value="">All Classes</option>
+                                    <option value="CTK46">CTK46</option>
+                                    <option value="CTK47">CTK47</option>
+                                    <option value="CTK48">CTK48</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Loading -->
+                    <div class="loading" id="loading">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="mt-2">Đang tải dữ liệu...</p>
+                    </div>
+                    
+                    <!-- Students Table -->
+                    <div class="table-responsive">
+                        <table class="table table-custom">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>STUDENT NAME</th>
+                                    <th>CLASS</th>
+                                    <th>GPA</th>
+                                    <th class="text-end">ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentsTableBody">
+                                <!-- Students will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <div class="text-light">
+                            <span id="paginationInfo" class="muted-info">Showing 1 to 10 of 25 students</span>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-light btn-sm" onclick="previousPage()">Previous</button>
+                            <button class="btn btn-custom btn-sm active" onclick="goToPage(1)">1</button>
+                            <button class="btn btn-outline-light btn-sm" onclick="goToPage(2)">2</button>
+                            <button class="btn btn-outline-light btn-sm" onclick="nextPage()">Next</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Footer -->
+                    <div class="footer">
+                        <p>&copy; 2025 EduSync Manager Web Application. Được phát triển với Flask & Bootstrap.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add/Edit Student Modal -->
+    <div class="modal fade" id="studentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">
+                        <i class="fas fa-user-plus"></i> Thêm sinh viên mới
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" title="Close" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="studentForm">
+                        <div class="mb-3">
+                            <label for="studentName" class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" id="studentName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="studentClass" class="form-label">Lớp học</label>
+                            <select class="form-control" id="studentClass" required>
+                                <option value="">Chọn lớp</option>
+                                <option value="CTK46">CTK46</option>
+                                <option value="CTK47">CTK47</option>
+                                <option value="CTK48">CTK48</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="studentGPA" class="form-label">Điểm GPA</label>
+                            <input type="number" class="form-control" id="studentGPA" 
+                                   min="0" max="4" step="0.01" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i> Hủy
+                    </button>
+                    <button type="button" class="btn btn-custom" onclick="saveStudent()">
+                        <i class="fas fa-save"></i> Lưu
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        let students = [];
+        let editingStudentId = null;
+        let studentModal;
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            studentModal = new bootstrap.Modal(document.getElementById('studentModal'));
+            loadStudents();
+            setupEventListeners();
+        });
+        
+        function setupEventListeners() {
+            // Search functionality
+            document.getElementById('searchInput').addEventListener('input', function() {
+                const query = this.value.trim();
+                const classFilter = document.getElementById('classFilter').value;
+                searchStudents(query, classFilter);
+            });
+            
+            // Class filter
+            document.getElementById('classFilter').addEventListener('change', function() {
+                const query = document.getElementById('searchInput').value.trim();
+                const classFilter = this.value;
+                searchStudents(query, classFilter);
+            });
+        }
+        
+        async function loadStudents() {
+            showLoading(true);
+            try {
+                const response = await fetch('/api/students');
+                students = await response.json();
+                displayStudents(students);
+                updateStats();
+            } catch (error) {
+                showAlert('Lỗi khi tải dữ liệu: ' + error.message, 'danger');
+            } finally {
+                showLoading(false);
+            }
+        }
+        
+        async function searchStudents(query, classFilter) {
+            showLoading(true);
+            try {
+                let url = '/api/students/search?';
+                if (query) url += `q=${encodeURIComponent(query)}&`;
+                if (classFilter) url += `class=${encodeURIComponent(classFilter)}`;
+                
+                const response = await fetch(url);
+                const results = await response.json();
+                displayStudents(results);
+            } catch (error) {
+                showAlert('Lỗi khi tìm kiếm: ' + error.message, 'danger');
+            } finally {
+                showLoading(false);
+            }
+        }
+        
+        function displayStudents(studentsToShow) {
+            const tbody = document.getElementById('studentsTableBody');
+            tbody.innerHTML = '';
+            
+            if (studentsToShow.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="5" class="text-center py-4">
+                            <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
+                            <p class="text-muted">No students found</p>
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            studentsToShow.forEach(student => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="fw-bold" style="color: #667eea;">${student.id}</td>
+                    <td class="fw-semibold" style="color: #e2e8f0;">${student.name}</td>
+                    <td><span class="badge" style="background: linear-gradient(45deg, #3b82f6, #1d4ed8); color: white; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem;">${student.class_name}</span></td>
+                    <td>
+                        <span class="badge" style="background: ${getGPABadgeColor(student.gpa)}; color: white; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">
+                            ${student.gpa.toFixed(2)}
+                        </span>
+                    </td>
+                    <td class="text-end">
+                        <button class="btn btn-warning-custom btn-sm me-2" 
+                                onclick="editStudent(${student.id})" title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-danger-custom btn-sm" 
+                                onclick="deleteStudent(${student.id})" title="Delete">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+        
+        function getGPABadgeClass(gpa) {
+            if (gpa >= 3.5) return 'bg-success';
+            if (gpa >= 3.0) return 'bg-warning';
+            return 'bg-danger';
+        }
+        
+        function getGPABadgeColor(gpa) {
+            if (gpa >= 3.5) return 'linear-gradient(45deg, #10b981, #059669)';
+            if (gpa >= 3.0) return 'linear-gradient(45deg, #f59e0b, #d97706)';
+            return 'linear-gradient(45deg, #ef4444, #dc2626)';
+        }
+        
+        function updateStats() {
+            const totalStudents = students.length;
+            const avgGPA = students.length > 0 ? 
+                (students.reduce((sum, s) => sum + s.gpa, 0) / students.length).toFixed(2) : 0;
+            const totalClasses = new Set(students.map(s => s.class_name)).size;
+            
+            document.getElementById('totalStudents').textContent = totalStudents;
+            document.getElementById('avgGPA').textContent = avgGPA;
+            document.getElementById('totalClasses').textContent = totalClasses;
+        }
+        
+        function addStudent() {
+            editingStudentId = null;
+            document.getElementById('modalTitle').innerHTML = '<i class="fas fa-user-plus"></i> Thêm sinh viên mới';
+            document.getElementById('studentForm').reset();
+            studentModal.show();
+        }
+        
+        function editStudent(id) {
+            const student = students.find(s => s.id === id);
+            if (!student) return;
+            
+            editingStudentId = id;
+            document.getElementById('modalTitle').innerHTML = '<i class="fas fa-user-edit"></i> Sửa thông tin sinh viên';
+            document.getElementById('studentName').value = student.name;
+            document.getElementById('studentClass').value = student.class_name;
+            document.getElementById('studentGPA').value = student.gpa;
+            studentModal.show();
+        }
+        
+        async function saveStudent() {
+            const name = document.getElementById('studentName').value.trim();
+            const className = document.getElementById('studentClass').value;
+            const gpa = parseFloat(document.getElementById('studentGPA').value);
+            
+            if (!name || !className || isNaN(gpa)) {
+                showAlert('Vui lòng điền đầy đủ thông tin!', 'warning');
+                return;
+            }
+            
+            if (gpa < 0 || gpa > 4) {
+                showAlert('GPA phải từ 0 đến 4!', 'warning');
+                return;
+            }
+            
+            try {
+                const url = editingStudentId ? `/api/students/${editingStudentId}` : '/api/students';
+                const method = editingStudentId ? 'PUT' : 'POST';
+                
+                const response = await fetch(url, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        class_name: className,
+                        gpa: gpa
+                    })
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    showAlert(result.message, 'success');
+                    studentModal.hide();
+                    loadStudents();
+                } else {
+                    const error = await response.json();
+                    showAlert('Lỗi: ' + error.error, 'danger');
+                }
+            } catch (error) {
+                showAlert('Lỗi khi lưu: ' + error.message, 'danger');
+            }
+        }
+        
+        async function deleteStudent(id) {
+            const student = students.find(s => s.id === id);
+            if (!student) return;
+            
+            if (!confirm(`Bạn có chắc chắn muốn xóa sinh viên "${student.name}"?`)) {
+                return;
+            }
+            
+            try {
+                const response = await fetch(`/api/students/${id}`, {
+                    method: 'DELETE'
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    showAlert(result.message, 'success');
+                    loadStudents();
+                } else {
+                    const error = await response.json();
+                    showAlert('Lỗi: ' + error.error, 'danger');
+                }
+            } catch (error) {
+                showAlert('Lỗi khi xóa: ' + error.message, 'danger');
+            }
+        }
+        
+        function showLoading(show) {
+            document.getElementById('loading').style.display = show ? 'block' : 'none';
+        }
+        
+        function showAlert(message, type) {
+            // Remove existing alerts
+            const existingAlerts = document.querySelectorAll('.alert-custom');
+            existingAlerts.forEach(alert => alert.remove());
+            
+            // Create new alert
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} alert-custom alert-dismissible fade show`;
+            alertDiv.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'danger' ? 'exclamation-triangle' : 'info-circle'}"></i>
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            // Insert after navigation
+            const nav = document.querySelector('nav');
+            nav.insertAdjacentElement('afterend', alertDiv);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (alertDiv.parentNode) {
+                    alertDiv.remove();
+                }
+            }, 5000);
+        }
+        
+        // Pagination functions
+        function previousPage() {
+            showAlert('Previous page clicked', 'info');
+        }
+        
+        function nextPage() {
+            showAlert('Next page clicked', 'info');
+        }
+        
+        function goToPage(page) {
+            showAlert(`Go to page ${page}`, 'info');
+        }
+        
+        // Export function
+        function exportData() {
+            showAlert('Export functionality will be implemented soon!', 'info');
+        }
+    </script>
+</body>
+</html>
