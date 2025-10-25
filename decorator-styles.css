@@ -16,13 +16,32 @@
     --btn-hover-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
     --btn-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
     --stats-bg: linear-gradient(45deg, #667eea, #764ba2);
+    --stats-text: #ffffff;
     --table-bg: #0f172a;
+    --table-text: #e2e8f0;
     --table-header-bg: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --table-header-text: #ffffff;
     --table-border: #334155;
     --table-hover-bg: #1f2937;
     --nav-link-color: #cbd5e1;
     --nav-link-hover-bg: rgba(102, 126, 234, 0.1);
     --nav-link-hover-color: #667eea;
+    --search-text: #e2e8f0;
+    --form-text: #e2e8f0;
+    --form-bg: #0f172a;
+    --form-border: #334155;
+    --modal-bg: #1e293b;
+    --modal-text: #e2e8f0;
+    --modal-header-bg: linear-gradient(45deg, #667eea, #764ba2);
+    --modal-header-text: #ffffff;
+    --footer-text: #94a3b8;
+    --loading-text: #667eea;
+    --pagination-bg: #0f172a;
+    --pagination-text: #e2e8f0;
+    --pagination-border: #334155;
+    --pagination-hover-bg: #1f2937;
+    --pagination-active-bg: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --pagination-active-text: #ffffff;
 }
 
 /* Theme-specific styles */
@@ -58,6 +77,82 @@ body {
 .page-header p {
     color: var(--text-primary) !important;
     opacity: 0.8;
+}
+
+.stats-card {
+    background: var(--stats-bg) !important;
+    color: var(--stats-text) !important;
+}
+
+.stats-card h3 {
+    color: var(--stats-text) !important;
+}
+
+.stats-card p {
+    color: var(--stats-text) !important;
+}
+
+.table-custom tbody tr {
+    background: var(--table-bg) !important;
+    color: var(--table-text) !important;
+}
+
+.table-custom tbody td {
+    color: var(--table-text) !important;
+}
+
+.table-custom thead th {
+    color: var(--table-header-text) !important;
+}
+
+.modal-content {
+    background: var(--modal-bg) !important;
+    color: var(--modal-text) !important;
+}
+
+.modal-header {
+    background: var(--modal-header-bg) !important;
+    color: var(--modal-header-text) !important;
+}
+
+.form-control {
+    background: var(--form-bg) !important;
+    color: var(--form-text) !important;
+    border: 1px solid var(--form-border) !important;
+}
+
+.form-control:focus {
+    background: var(--form-bg) !important;
+    color: var(--form-text) !important;
+    border-color: var(--accent-primary) !important;
+}
+
+.form-label {
+    color: var(--form-text) !important;
+}
+
+.footer {
+    color: var(--footer-text) !important;
+}
+
+.loading {
+    color: var(--loading-text) !important;
+}
+
+.page-item .page-link {
+    background: var(--pagination-bg) !important;
+    color: var(--pagination-text) !important;
+    border-color: var(--pagination-border) !important;
+}
+
+.page-item .page-link:hover {
+    background: var(--pagination-hover-bg) !important;
+    color: var(--text-primary) !important;
+}
+
+.page-item.active .page-link {
+    background: var(--pagination-active-bg) !important;
+    color: var(--pagination-active-text) !important;
 }
 
 .btn-custom {
@@ -376,6 +471,25 @@ body.light-theme {
     --nav-link-color: #6c757d;
     --nav-link-hover-bg: rgba(0, 123, 255, 0.1);
     --nav-link-hover-color: #007bff;
+    --stats-text: #ffffff;
+    --table-text: #212529;
+    --table-header-text: #ffffff;
+    --search-text: #212529;
+    --form-text: #212529;
+    --form-bg: #ffffff;
+    --form-border: #dee2e6;
+    --modal-bg: #ffffff;
+    --modal-text: #212529;
+    --modal-header-bg: linear-gradient(45deg, #007bff, #0056b3);
+    --modal-header-text: #ffffff;
+    --footer-text: #6c757d;
+    --loading-text: #007bff;
+    --pagination-bg: #ffffff;
+    --pagination-text: #6c757d;
+    --pagination-border: #dee2e6;
+    --pagination-hover-bg: #f8f9fa;
+    --pagination-active-bg: #007bff;
+    --pagination-active-text: #ffffff;
 }
 
 /* Neon Theme Specific */

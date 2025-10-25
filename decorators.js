@@ -46,7 +46,41 @@ class LightThemeDecorator {
             textColor: '#212529',
             accent: '#007bff',
             cardBackground: 'rgba(255, 255, 255, 0.95)',
-            borderColor: '#dee2e6'
+            borderColor: '#dee2e6',
+            navbarBg: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+            navbarBorder: '#dee2e6',
+            searchBg: '#ffffff',
+            searchBorder: '#dee2e6',
+            btnBg: 'linear-gradient(45deg, #007bff, #0056b3)',
+            btnHoverShadow: '0 8px 25px rgba(0, 123, 255, 0.4)',
+            btnShadow: '0 4px 15px rgba(0, 123, 255, 0.3)',
+            statsBg: 'linear-gradient(45deg, #007bff, #0056b3)',
+            statsText: '#ffffff',
+            tableBg: '#ffffff',
+            tableText: '#212529',
+            tableHeaderBg: 'linear-gradient(135deg, #007bff 0%, #0056b3 100%)',
+            tableHeaderText: '#ffffff',
+            tableBorder: '#dee2e6',
+            tableHoverBg: '#f8f9fa',
+            navLinkColor: '#6c757d',
+            navLinkHoverBg: 'rgba(0, 123, 255, 0.1)',
+            navLinkHoverColor: '#007bff',
+            searchText: '#212529',
+            formText: '#212529',
+            formBg: '#ffffff',
+            formBorder: '#dee2e6',
+            modalBg: '#ffffff',
+            modalText: '#212529',
+            modalHeaderBg: 'linear-gradient(45deg, #007bff, #0056b3)',
+            modalHeaderText: '#ffffff',
+            footerText: '#6c757d',
+            loadingText: '#007bff',
+            paginationBg: '#ffffff',
+            paginationText: '#6c757d',
+            paginationBorder: '#dee2e6',
+            paginationHoverBg: '#f8f9fa',
+            paginationActiveBg: '#007bff',
+            paginationActiveText: '#ffffff'
         };
     }
 }
@@ -332,13 +366,32 @@ class ThemeManager {
         root.style.removeProperty('--btn-hover-shadow');
         root.style.removeProperty('--btn-shadow');
         root.style.removeProperty('--stats-bg');
+        root.style.removeProperty('--stats-text');
         root.style.removeProperty('--table-bg');
+        root.style.removeProperty('--table-text');
         root.style.removeProperty('--table-header-bg');
+        root.style.removeProperty('--table-header-text');
         root.style.removeProperty('--table-border');
         root.style.removeProperty('--table-hover-bg');
         root.style.removeProperty('--nav-link-color');
         root.style.removeProperty('--nav-link-hover-bg');
         root.style.removeProperty('--nav-link-hover-color');
+        root.style.removeProperty('--search-text');
+        root.style.removeProperty('--form-text');
+        root.style.removeProperty('--form-bg');
+        root.style.removeProperty('--form-border');
+        root.style.removeProperty('--modal-bg');
+        root.style.removeProperty('--modal-text');
+        root.style.removeProperty('--modal-header-bg');
+        root.style.removeProperty('--modal-header-text');
+        root.style.removeProperty('--footer-text');
+        root.style.removeProperty('--loading-text');
+        root.style.removeProperty('--pagination-bg');
+        root.style.removeProperty('--pagination-text');
+        root.style.removeProperty('--pagination-border');
+        root.style.removeProperty('--pagination-hover-bg');
+        root.style.removeProperty('--pagination-active-bg');
+        root.style.removeProperty('--pagination-active-text');
         
         // Force style recalculation
         document.body.offsetHeight;
@@ -356,6 +409,42 @@ class ThemeManager {
             } else {
                 root.style.setProperty('--glow-effect', 'none');
             }
+            
+            // Apply additional theme properties if available
+            if (theme.navbarBg) root.style.setProperty('--navbar-bg', theme.navbarBg);
+            if (theme.navbarBorder) root.style.setProperty('--navbar-border', theme.navbarBorder);
+            if (theme.searchBg) root.style.setProperty('--search-bg', theme.searchBg);
+            if (theme.searchBorder) root.style.setProperty('--search-border', theme.searchBorder);
+            if (theme.btnBg) root.style.setProperty('--btn-bg', theme.btnBg);
+            if (theme.btnHoverShadow) root.style.setProperty('--btn-hover-shadow', theme.btnHoverShadow);
+            if (theme.btnShadow) root.style.setProperty('--btn-shadow', theme.btnShadow);
+            if (theme.statsBg) root.style.setProperty('--stats-bg', theme.statsBg);
+            if (theme.statsText) root.style.setProperty('--stats-text', theme.statsText);
+            if (theme.tableBg) root.style.setProperty('--table-bg', theme.tableBg);
+            if (theme.tableText) root.style.setProperty('--table-text', theme.tableText);
+            if (theme.tableHeaderBg) root.style.setProperty('--table-header-bg', theme.tableHeaderBg);
+            if (theme.tableHeaderText) root.style.setProperty('--table-header-text', theme.tableHeaderText);
+            if (theme.tableBorder) root.style.setProperty('--table-border', theme.tableBorder);
+            if (theme.tableHoverBg) root.style.setProperty('--table-hover-bg', theme.tableHoverBg);
+            if (theme.navLinkColor) root.style.setProperty('--nav-link-color', theme.navLinkColor);
+            if (theme.navLinkHoverBg) root.style.setProperty('--nav-link-hover-bg', theme.navLinkHoverBg);
+            if (theme.navLinkHoverColor) root.style.setProperty('--nav-link-hover-color', theme.navLinkHoverColor);
+            if (theme.searchText) root.style.setProperty('--search-text', theme.searchText);
+            if (theme.formText) root.style.setProperty('--form-text', theme.formText);
+            if (theme.formBg) root.style.setProperty('--form-bg', theme.formBg);
+            if (theme.formBorder) root.style.setProperty('--form-border', theme.formBorder);
+            if (theme.modalBg) root.style.setProperty('--modal-bg', theme.modalBg);
+            if (theme.modalText) root.style.setProperty('--modal-text', theme.modalText);
+            if (theme.modalHeaderBg) root.style.setProperty('--modal-header-bg', theme.modalHeaderBg);
+            if (theme.modalHeaderText) root.style.setProperty('--modal-header-text', theme.modalHeaderText);
+            if (theme.footerText) root.style.setProperty('--footer-text', theme.footerText);
+            if (theme.loadingText) root.style.setProperty('--loading-text', theme.loadingText);
+            if (theme.paginationBg) root.style.setProperty('--pagination-bg', theme.paginationBg);
+            if (theme.paginationText) root.style.setProperty('--pagination-text', theme.paginationText);
+            if (theme.paginationBorder) root.style.setProperty('--pagination-border', theme.paginationBorder);
+            if (theme.paginationHoverBg) root.style.setProperty('--pagination-hover-bg', theme.paginationHoverBg);
+            if (theme.paginationActiveBg) root.style.setProperty('--pagination-active-bg', theme.paginationActiveBg);
+            if (theme.paginationActiveText) root.style.setProperty('--pagination-active-text', theme.paginationActiveText);
         }, 50);
     }
     
