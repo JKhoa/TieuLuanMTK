@@ -2,12 +2,19 @@
 
 /* CSS Variables for Theme Support */
 :root {
-    --bg-primary: #0f172a;
+    --bg-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     --text-primary: #e2e8f0;
     --accent-primary: #667eea;
     --card-bg: rgba(30, 41, 59, 0.98);
     --border-primary: #334155;
     --glow-effect: none;
+    --navbar-bg: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    --navbar-border: #475569;
+    --search-bg: #0f172a;
+    --search-border: #334155;
+    --btn-bg: linear-gradient(45deg, #667eea, #764ba2);
+    --btn-hover-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    --btn-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 /* Theme-specific styles */
@@ -20,6 +27,38 @@ body {
 .main-container {
     background: var(--card-bg) !important;
     border: 1px solid var(--border-primary) !important;
+}
+
+.navbar {
+    background: var(--navbar-bg) !important;
+    border: 1px solid var(--navbar-border) !important;
+}
+
+.navbar-brand {
+    color: var(--text-primary) !important;
+}
+
+.search-section {
+    background: var(--search-bg) !important;
+    border: 1px solid var(--search-border) !important;
+}
+
+.page-header h1 {
+    color: var(--text-primary) !important;
+}
+
+.page-header p {
+    color: var(--text-primary) !important;
+    opacity: 0.8;
+}
+
+.btn-custom {
+    background: var(--btn-bg) !important;
+    box-shadow: var(--btn-shadow) !important;
+}
+
+.btn-custom:hover {
+    box-shadow: var(--btn-hover-shadow) !important;
 }
 
 /* Toast Notifications */
@@ -259,30 +298,51 @@ body {
 
 /* Dark Theme Specific */
 body.dark-theme {
-    --bg-primary: #000000 !important;
-    --text-primary: #ffffff !important;
-    --accent-primary: #ff6b6b !important;
-    --card-bg: rgba(0, 0, 0, 0.9) !important;
-    --border-primary: #333333 !important;
+    --bg-primary: #000000;
+    --text-primary: #ffffff;
+    --accent-primary: #ff6b6b;
+    --card-bg: rgba(0, 0, 0, 0.9);
+    --border-primary: #333333;
+    --navbar-bg: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    --navbar-border: #444444;
+    --search-bg: #111111;
+    --search-border: #333333;
+    --btn-bg: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    --btn-hover-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+    --btn-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
 }
 
 /* Light Theme Specific */
 body.light-theme {
-    --bg-primary: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
-    --text-primary: #212529 !important;
-    --accent-primary: #007bff !important;
-    --card-bg: rgba(255, 255, 255, 0.95) !important;
-    --border-primary: #dee2e6 !important;
+    --bg-primary: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    --text-primary: #212529;
+    --accent-primary: #007bff;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --border-primary: #dee2e6;
+    --navbar-bg: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    --navbar-border: #dee2e6;
+    --search-bg: #ffffff;
+    --search-border: #dee2e6;
+    --btn-bg: linear-gradient(45deg, #007bff, #0056b3);
+    --btn-hover-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+    --btn-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
 /* Neon Theme Specific */
 body.neon-theme {
-    --bg-primary: #0a0a0a !important;
-    --text-primary: #00ff00 !important;
-    --accent-primary: #ff00ff !important;
-    --card-bg: rgba(0, 255, 0, 0.1) !important;
-    --border-primary: #00ff00 !important;
-    --glow-effect: 0 0 20px #00ff00 !important;
+    --bg-primary: #0a0a0a;
+    --text-primary: #00ff00;
+    --accent-primary: #ff00ff;
+    --card-bg: rgba(0, 255, 0, 0.1);
+    --border-primary: #00ff00;
+    --glow-effect: 0 0 20px #00ff00;
+    --navbar-bg: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    --navbar-border: #00ff00;
+    --search-bg: #0a0a0a;
+    --search-border: #00ff00;
+    --btn-bg: linear-gradient(45deg, #ff00ff, #cc00cc);
+    --btn-hover-shadow: 0 8px 25px rgba(255, 0, 255, 0.6);
+    --btn-shadow: 0 4px 15px rgba(255, 0, 255, 0.4);
 }
 
 body.neon-theme .main-container {
