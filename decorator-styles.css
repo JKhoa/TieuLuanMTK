@@ -15,7 +15,7 @@
     --btn-bg: linear-gradient(45deg, #f093fb, #f5576c) !important;
     --btn-hover-shadow: 0 8px 25px rgba(240, 147, 251, 0.4) !important;
     --btn-shadow: 0 4px 15px rgba(240, 147, 251, 0.3) !important;
-    --stats-bg: linear-gradient(45deg, #4facfe, #00f2fe) !important;
+    --stats-bg: linear-gradient(45deg, #667eea, #764ba2) !important;
     --table-bg: rgba(255, 255, 255, 0.95) !important;
     --table-header-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
     --table-border: #e2e8f0 !important;
@@ -23,7 +23,7 @@
     --nav-link-color: #ffffff !important;
     --nav-link-hover-bg: rgba(240, 147, 251, 0.2) !important;
     --nav-link-hover-color: #f093fb !important;
-    --gpa-excellent: linear-gradient(45deg, #4facfe, #00f2fe) !important;
+    --gpa-excellent: linear-gradient(45deg, #667eea, #764ba2) !important;
     --gpa-good: linear-gradient(45deg, #f093fb, #f5576c) !important;
     --gpa-poor: linear-gradient(45deg, #ff6b6b, #ee5a52) !important;
     --class-badge: linear-gradient(45deg, #667eea, #764ba2) !important;
@@ -483,7 +483,7 @@ body.dark-theme {
     --btn-bg: linear-gradient(45deg, #ff6b6b, #ee5a52) !important;
     --btn-hover-shadow: 0 8px 25px rgba(255, 107, 107, 0.4) !important;
     --btn-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
-    --stats-bg: linear-gradient(45deg, #ff6b6b, #ee5a52) !important;
+    --stats-bg: linear-gradient(45deg, #1a1a2e, #16213e) !important;
     --table-bg: rgba(30, 41, 59, 0.95) !important;
     --table-header-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
     --table-border: #475569 !important;
@@ -491,11 +491,11 @@ body.dark-theme {
     --nav-link-color: #e2e8f0 !important;
     --nav-link-hover-bg: rgba(255, 107, 107, 0.1) !important;
     --nav-link-hover-color: #ff6b6b !important;
-    --gpa-excellent: linear-gradient(45deg, #10b981, #059669) !important;
-    --gpa-good: linear-gradient(45deg, #f59e0b, #d97706) !important;
+    --gpa-excellent: linear-gradient(45deg, #1a1a2e, #16213e) !important;
+    --gpa-good: linear-gradient(45deg, #ff6b6b, #ee5a52) !important;
     --gpa-poor: linear-gradient(45deg, #ef4444, #dc2626) !important;
-    --class-badge: linear-gradient(45deg, #3b82f6, #1d4ed8) !important;
-    --edit-btn: linear-gradient(45deg, #f59e0b, #d97706) !important;
+    --class-badge: linear-gradient(45deg, #1a1a2e, #16213e) !important;
+    --edit-btn: linear-gradient(45deg, #ff6b6b, #ee5a52) !important;
     --delete-btn: linear-gradient(45deg, #ef4444, #dc2626) !important;
     --id-color: #ff6b6b !important;
 }
@@ -514,7 +514,7 @@ body.light-theme {
     --btn-bg: linear-gradient(45deg, #fd79a8, #e84393) !important;
     --btn-hover-shadow: 0 8px 25px rgba(253, 121, 168, 0.4) !important;
     --btn-shadow: 0 4px 15px rgba(253, 121, 168, 0.3) !important;
-    --stats-bg: linear-gradient(45deg, #00b894, #00cec9) !important;
+    --stats-bg: linear-gradient(45deg, #74b9ff, #0984e3) !important;
     --table-bg: rgba(255, 255, 255, 0.95) !important;
     --table-header-bg: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%) !important;
     --table-border: #ddd !important;
@@ -522,11 +522,11 @@ body.light-theme {
     --nav-link-color: #ffffff !important;
     --nav-link-hover-bg: rgba(253, 121, 168, 0.2) !important;
     --nav-link-hover-color: #fd79a8 !important;
-    --gpa-excellent: linear-gradient(45deg, #00b894, #00cec9) !important;
-    --gpa-good: linear-gradient(45deg, #fdcb6e, #e17055) !important;
+    --gpa-excellent: linear-gradient(45deg, #74b9ff, #0984e3) !important;
+    --gpa-good: linear-gradient(45deg, #fd79a8, #e84393) !important;
     --gpa-poor: linear-gradient(45deg, #e17055, #d63031) !important;
     --class-badge: linear-gradient(45deg, #74b9ff, #0984e3) !important;
-    --edit-btn: linear-gradient(45deg, #fdcb6e, #e17055) !important;
+    --edit-btn: linear-gradient(45deg, #fd79a8, #e84393) !important;
     --delete-btn: linear-gradient(45deg, #e17055, #d63031) !important;
     --id-color: #74b9ff !important;
 }
@@ -557,10 +557,10 @@ body.neon-theme {
     --gpa-excellent: linear-gradient(45deg, #00ff41, #00e676) !important;
     --gpa-good: linear-gradient(45deg, #ff0080, #ff4081) !important;
     --gpa-poor: linear-gradient(45deg, #ff1744, #f50057) !important;
-    --class-badge: linear-gradient(45deg, #00ffff, #00bcd4) !important;
+    --class-badge: linear-gradient(45deg, #00ff41, #00e676) !important;
     --edit-btn: linear-gradient(45deg, #ff0080, #ff4081) !important;
     --delete-btn: linear-gradient(45deg, #ff1744, #f50057) !important;
-    --id-color: #00ffff !important;
+    --id-color: #00ff41 !important;
 }
 
 body.neon-theme .main-container {
