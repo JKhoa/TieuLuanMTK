@@ -297,13 +297,16 @@ class ThemeManager {
         if (this.themes[themeName]) {
             this.currentTheme = this.themes[themeName];
             
-            // Remove all existing theme classes
-            document.body.className = document.body.className.replace(/theme-\w+/g, '');
+            // Force remove all existing theme classes
+            document.body.classList.remove('dark-theme', 'light-theme', 'neon-theme');
             
             // Add new theme class if not default
             if (themeName !== 'default') {
                 document.body.classList.add(`${themeName}-theme`);
             }
+            
+            // Force style recalculation
+            document.body.offsetHeight;
             
             this.applyTheme();
             localStorage.setItem('selectedTheme', themeName);
@@ -314,23 +317,46 @@ class ThemeManager {
         const theme = this.currentTheme.apply();
         const root = document.documentElement;
         
-        // Force remove all existing theme classes first
-        document.body.classList.remove('dark-theme', 'light-theme', 'neon-theme');
-        
-        root.style.setProperty('--bg-primary', theme.background);
-        root.style.setProperty('--text-primary', theme.textColor);
-        root.style.setProperty('--accent-primary', theme.accent);
-        root.style.setProperty('--card-bg', theme.cardBackground);
-        root.style.setProperty('--border-primary', theme.borderColor);
-        
-        if (theme.glow) {
-            root.style.setProperty('--glow-effect', theme.glow);
-        } else {
-            root.style.setProperty('--glow-effect', 'none');
-        }
+        // Clear all existing CSS variables first
+        root.style.removeProperty('--bg-primary');
+        root.style.removeProperty('--text-primary');
+        root.style.removeProperty('--accent-primary');
+        root.style.removeProperty('--card-bg');
+        root.style.removeProperty('--border-primary');
+        root.style.removeProperty('--glow-effect');
+        root.style.removeProperty('--navbar-bg');
+        root.style.removeProperty('--navbar-border');
+        root.style.removeProperty('--search-bg');
+        root.style.removeProperty('--search-border');
+        root.style.removeProperty('--btn-bg');
+        root.style.removeProperty('--btn-hover-shadow');
+        root.style.removeProperty('--btn-shadow');
+        root.style.removeProperty('--stats-bg');
+        root.style.removeProperty('--table-bg');
+        root.style.removeProperty('--table-header-bg');
+        root.style.removeProperty('--table-border');
+        root.style.removeProperty('--table-hover-bg');
+        root.style.removeProperty('--nav-link-color');
+        root.style.removeProperty('--nav-link-hover-bg');
+        root.style.removeProperty('--nav-link-hover-color');
         
         // Force style recalculation
         document.body.offsetHeight;
+        
+        // Wait a bit then apply new theme
+        setTimeout(() => {
+            root.style.setProperty('--bg-primary', theme.background);
+            root.style.setProperty('--text-primary', theme.textColor);
+            root.style.setProperty('--accent-primary', theme.accent);
+            root.style.setProperty('--card-bg', theme.cardBackground);
+            root.style.setProperty('--border-primary', theme.borderColor);
+            
+            if (theme.glow) {
+                root.style.setProperty('--glow-effect', theme.glow);
+            } else {
+                root.style.setProperty('--glow-effect', 'none');
+            }
+        }, 50);
     }
     
     loadSavedTheme() {
