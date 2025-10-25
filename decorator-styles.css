@@ -49,9 +49,9 @@
     --btn-danger-hover-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
     --btn-warning-hover-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
     --btn-outline-bg: transparent;
-    --btn-outline-text: #cbd5e1;
-    --btn-outline-border: #334155;
-    --btn-outline-hover-bg: #1f2937;
+    --btn-outline-text: #0066cc;
+    --btn-outline-border: #0066cc;
+    --btn-outline-hover-bg: #0066cc;
     --btn-outline-hover-text: #ffffff;
 }
 
@@ -479,9 +479,9 @@ body.dark-theme {
     --btn-danger-hover-shadow: 0 4px 12px rgba(255, 71, 87, 0.4);
     --btn-warning-hover-shadow: 0 4px 12px rgba(255, 165, 2, 0.4);
     --btn-outline-bg: transparent;
-    --btn-outline-text: #cccccc;
-    --btn-outline-border: #444444;
-    --btn-outline-hover-bg: #222222;
+    --btn-outline-text: #0066cc;
+    --btn-outline-border: #0066cc;
+    --btn-outline-hover-bg: #0066cc;
     --btn-outline-hover-text: #ffffff;
 }
 
@@ -533,9 +533,9 @@ body.light-theme {
     --btn-danger-hover-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
     --btn-warning-hover-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
     --btn-outline-bg: #ffffff;
-    --btn-outline-text: #007bff;
-    --btn-outline-border: #007bff;
-    --btn-outline-hover-bg: #007bff;
+    --btn-outline-text: #0066cc;
+    --btn-outline-border: #0066cc;
+    --btn-outline-hover-bg: #0066cc;
     --btn-outline-hover-text: #ffffff;
 }
 
@@ -569,9 +569,9 @@ body.neon-theme {
     --btn-danger-hover-shadow: 0 4px 12px rgba(255, 23, 68, 0.7);
     --btn-warning-hover-shadow: 0 4px 12px rgba(255, 235, 59, 0.7);
     --btn-outline-bg: transparent;
-    --btn-outline-text: #00ff00;
-    --btn-outline-border: #00ff00;
-    --btn-outline-hover-bg: #ff00ff;
+    --btn-outline-text: #0066cc;
+    --btn-outline-border: #0066cc;
+    --btn-outline-hover-bg: #0066cc;
     --btn-outline-hover-text: #ffffff;
 }
 
