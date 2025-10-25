@@ -78,6 +78,35 @@ body {
 
 .stats-card {
     background: var(--stats-bg) !important;
+    border-radius: 15px;
+    padding: 25px;
+    color: white !important;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.stats-card h3 {
+    color: white !important;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.stats-card p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 0;
+    font-size: 1rem;
 }
 
 .table-custom {
@@ -119,33 +148,82 @@ body {
 /* GPA Badge Colors */
 .gpa-excellent {
     background: var(--gpa-excellent) !important;
+    color: white !important;
+    border: none !important;
+    padding: 4px 12px !important;
+    border-radius: 6px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
 }
 
 .gpa-good {
     background: var(--gpa-good) !important;
+    color: white !important;
+    border: none !important;
+    padding: 4px 12px !important;
+    border-radius: 6px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
 }
 
 .gpa-poor {
     background: var(--gpa-poor) !important;
+    color: white !important;
+    border: none !important;
+    padding: 4px 12px !important;
+    border-radius: 6px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
 }
 
 /* Class Badge */
 .class-badge {
     background: var(--class-badge) !important;
+    color: white !important;
+    border: none !important;
+    padding: 4px 12px !important;
+    border-radius: 6px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
 }
 
 /* Action Buttons */
 .edit-btn {
     background: var(--edit-btn) !important;
+    color: white !important;
+    border: none !important;
+    padding: 6px 12px !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+}
+
+.edit-btn:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
 }
 
 .delete-btn {
     background: var(--delete-btn) !important;
+    color: white !important;
+    border: none !important;
+    padding: 6px 12px !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+}
+
+.delete-btn:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* ID Color */
 .student-id {
     color: var(--id-color) !important;
+    font-weight: 700 !important;
 }
 
 /* Toast Notifications */
@@ -249,20 +327,20 @@ body {
 }
 
 .theme-btn.default {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .theme-btn.dark {
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
 .theme-btn.light {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
 }
 
 .theme-btn.neon {
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    box-shadow: 0 0 10px #00ff00;
+    box-shadow: 0 0 10px #00ff41;
 }
 
 /* Enhanced Button Styles */

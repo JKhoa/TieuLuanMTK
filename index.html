@@ -256,25 +256,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .stats-card {
-            border-radius: 15px;
-            padding: 25px;
-            color: white;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .stats-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-        
         .stats-card h3 {
             font-size: 2.5rem;
             font-weight: 700;
@@ -567,10 +548,24 @@
             try {
                 // Load data from JSON file instead of API
                 const response = await fetch('./data.json');
-                students = await response.json();
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                students = data;
                 filterAndPaginateStudents();
             } catch (error) {
-                showAlert('Error loading students: ' + error.message, 'danger');
+                console.error('Error loading students:', error);
+                showAlert('Lỗi khi tải dữ liệu: ' + error.message, 'danger');
+                // Fallback: load sample data directly
+                students = [
+                    {id: 1, name: 'Nguyễn Văn An', class_name: 'CTK46', gpa: 3.50},
+                    {id: 2, name: 'Trần Thị Bình', class_name: 'CTK46', gpa: 3.80},
+                    {id: 3, name: 'Lê Hoàng Cường', class_name: 'CTK47', gpa: 3.20},
+                    {id: 4, name: 'Phạm Thu Dung', class_name: 'CTK47', gpa: 3.00},
+                    {id: 5, name: 'Võ Minh Em', class_name: 'CTK48', gpa: 3.65}
+                ];
+                filterAndPaginateStudents();
             } finally {
                 showLoading(false);
             }
@@ -579,7 +574,7 @@
         function displayStudents(studentsToShow) {
             const tbody = document.getElementById('studentsTableBody');
             tbody.innerHTML = '';
-            
+
             if (studentsToShow.length === 0) {
                 tbody.innerHTML = `
                     <tr>
@@ -591,25 +586,23 @@
                 `;
                 return;
             }
-            
+
             studentsToShow.forEach(student => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td class="fw-bold student-id">${student.id}</td>
                     <td class="fw-semibold">${student.name}</td>
-                    <td><span class="badge class-badge" style="color: white; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem;">${student.class_name}</span></td>
+                    <td><span class="badge class-badge">${student.class_name}</span></td>
                     <td>
-                        <span class="badge ${getGPABadgeClass(student.gpa)}" style="color: white; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">
+                        <span class="badge ${getGPABadgeClass(student.gpa)}">
                             ${student.gpa.toFixed(2)}
                         </span>
                     </td>
                     <td class="text-end">
-                        <button class="btn edit-btn btn-sm me-2" 
-                                onclick="editStudent(${student.id})" title="Edit" style="color: white; border: none; padding: 6px 12px; border-radius: 6px;">
+                        <button class="btn edit-btn btn-sm me-2" onclick="editStudent(${student.id})" title="Edit">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <button class="btn delete-btn btn-sm" 
-                                onclick="deleteStudent(${student.id})" title="Delete" style="color: white; border: none; padding: 6px 12px; border-radius: 6px;">
+                        <button class="btn delete-btn btn-sm" onclick="deleteStudent(${student.id})" title="Delete">
                             <i class="fas fa-trash"></i>
                         </button>
                     </td>
