@@ -4,20 +4,27 @@
 :root {
     --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
     --text-primary: #ffffff !important;
+    --text-secondary: rgba(255, 255, 255, 0.8) !important;
+    --text-muted: rgba(255, 255, 255, 0.6) !important;
     --accent-primary: #f093fb !important;
     --card-bg: rgba(255, 255, 255, 0.95) !important;
+    --card-text: #2d3436 !important;
     --border-primary: #e2e8f0 !important;
     --glow-effect: none !important;
     --navbar-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
     --navbar-border: #f093fb !important;
     --search-bg: rgba(255, 255, 255, 0.9) !important;
+    --search-text: #2d3436 !important;
     --search-border: #f093fb !important;
     --btn-bg: linear-gradient(45deg, #f093fb, #f5576c) !important;
     --btn-hover-shadow: 0 8px 25px rgba(240, 147, 251, 0.4) !important;
     --btn-shadow: 0 4px 15px rgba(240, 147, 251, 0.3) !important;
     --stats-bg: linear-gradient(45deg, #667eea, #764ba2) !important;
+    --stats-text: #ffffff !important;
     --table-bg: rgba(255, 255, 255, 0.95) !important;
+    --table-text: #2d3436 !important;
     --table-header-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    --table-header-text: #ffffff !important;
     --table-border: #e2e8f0 !important;
     --table-hover-bg: rgba(240, 147, 251, 0.15) !important;
     --nav-link-color: #ffffff !important;
@@ -30,6 +37,10 @@
     --edit-btn: linear-gradient(45deg, #f093fb, #f5576c) !important;
     --delete-btn: linear-gradient(45deg, #ff6b6b, #ee5a52) !important;
     --id-color: #667eea !important;
+    --pagination-bg: #f8f9fa !important;
+    --pagination-text: #6c757d !important;
+    --pagination-active-bg: #f093fb !important;
+    --pagination-active-text: #ffffff !important;
 }
 
 /* Theme-specific styles */
@@ -66,7 +77,7 @@ body {
 .search-section .form-control {
     background: var(--search-bg) !important;
     border: 1px solid var(--search-border) !important;
-    color: var(--text-primary) !important;
+    color: var(--search-text) !important;
     border-radius: 8px !important;
     padding: 12px 16px !important;
     transition: all 0.3s ease !important;
@@ -75,12 +86,12 @@ body {
 .search-section .form-control:focus {
     background: var(--search-bg) !important;
     border-color: var(--accent-primary) !important;
-    color: var(--text-primary) !important;
+    color: var(--search-text) !important;
     box-shadow: 0 0 0 0.2rem rgba(240, 147, 251, 0.25) !important;
 }
 
 .search-section .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.7) !important;
+    color: var(--text-muted) !important;
 }
 
 .search-section .btn {
@@ -137,14 +148,15 @@ body {
 }
 
 .stats-card h3 {
-    color: white !important;
+    color: var(--stats-text) !important;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
 .stats-card p {
-    color: rgba(255, 255, 255, 0.9) !important;
+    color: var(--stats-text) !important;
+    opacity: 0.9;
     margin: 0;
     font-size: 1rem;
 }
@@ -159,13 +171,22 @@ body {
 
 .table-custom thead {
     background: var(--table-header-bg) !important;
-    color: white !important;
+    color: var(--table-header-text) !important;
+}
+
+.table-custom thead th {
+    color: var(--table-header-text) !important;
+    font-weight: 600 !important;
 }
 
 .table-custom tbody tr {
     transition: all 0.2s ease !important;
     background: var(--table-bg) !important;
-    color: var(--text-primary) !important;
+    color: var(--table-text) !important;
+}
+
+.table-custom tbody td {
+    color: var(--table-text) !important;
 }
 
 .table-custom tbody tr:nth-child(even) {
@@ -281,6 +302,31 @@ body {
 .student-id {
     color: var(--id-color) !important;
     font-weight: 700 !important;
+}
+
+/* Pagination Styles */
+.page-item .page-link {
+    background: var(--pagination-bg) !important;
+    color: var(--pagination-text) !important;
+    border: 1px solid var(--border-primary) !important;
+    transition: all 0.3s ease !important;
+}
+
+.page-item .page-link:hover {
+    background: var(--table-hover-bg) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--accent-primary) !important;
+}
+
+.page-item.active .page-link {
+    background: var(--pagination-active-bg) !important;
+    color: var(--pagination-active-text) !important;
+    border-color: var(--pagination-active-bg) !important;
+}
+
+/* Muted text */
+.muted-info {
+    color: var(--text-muted) !important;
 }
 
 /* Toast Notifications */
@@ -522,19 +568,26 @@ body {
 body.dark-theme {
     --bg-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
     --text-primary: #e2e8f0 !important;
+    --text-secondary: rgba(226, 232, 240, 0.8) !important;
+    --text-muted: rgba(226, 232, 240, 0.6) !important;
     --accent-primary: #ff6b6b !important;
     --card-bg: rgba(30, 41, 59, 0.95) !important;
+    --card-text: #e2e8f0 !important;
     --border-primary: #475569 !important;
     --navbar-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
     --navbar-border: #ff6b6b !important;
     --search-bg: rgba(30, 41, 59, 0.9) !important;
+    --search-text: #e2e8f0 !important;
     --search-border: #ff6b6b !important;
     --btn-bg: linear-gradient(45deg, #ff6b6b, #ee5a52) !important;
     --btn-hover-shadow: 0 8px 25px rgba(255, 107, 107, 0.4) !important;
     --btn-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
     --stats-bg: linear-gradient(45deg, #1a1a2e, #16213e) !important;
+    --stats-text: #e2e8f0 !important;
     --table-bg: rgba(30, 41, 59, 0.95) !important;
+    --table-text: #e2e8f0 !important;
     --table-header-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    --table-header-text: #e2e8f0 !important;
     --table-border: #475569 !important;
     --table-hover-bg: rgba(255, 107, 107, 0.15) !important;
     --nav-link-color: #e2e8f0 !important;
@@ -547,25 +600,36 @@ body.dark-theme {
     --edit-btn: linear-gradient(45deg, #ff6b6b, #ee5a52) !important;
     --delete-btn: linear-gradient(45deg, #ef4444, #dc2626) !important;
     --id-color: #ff6b6b !important;
+    --pagination-bg: #374151 !important;
+    --pagination-text: #e2e8f0 !important;
+    --pagination-active-bg: #ff6b6b !important;
+    --pagination-active-text: #ffffff !important;
 }
 
 /* Light Theme Specific */
 body.light-theme {
     --bg-primary: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%) !important;
     --text-primary: #2d3436 !important;
+    --text-secondary: rgba(45, 52, 54, 0.8) !important;
+    --text-muted: rgba(45, 52, 54, 0.6) !important;
     --accent-primary: #fd79a8 !important;
     --card-bg: rgba(255, 255, 255, 0.95) !important;
+    --card-text: #2d3436 !important;
     --border-primary: #ddd !important;
     --navbar-bg: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%) !important;
     --navbar-border: #fd79a8 !important;
     --search-bg: rgba(255, 255, 255, 0.9) !important;
+    --search-text: #2d3436 !important;
     --search-border: #fd79a8 !important;
     --btn-bg: linear-gradient(45deg, #fd79a8, #e84393) !important;
     --btn-hover-shadow: 0 8px 25px rgba(253, 121, 168, 0.4) !important;
     --btn-shadow: 0 4px 15px rgba(253, 121, 168, 0.3) !important;
     --stats-bg: linear-gradient(45deg, #74b9ff, #0984e3) !important;
+    --stats-text: #ffffff !important;
     --table-bg: rgba(255, 255, 255, 0.95) !important;
+    --table-text: #2d3436 !important;
     --table-header-bg: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%) !important;
+    --table-header-text: #ffffff !important;
     --table-border: #ddd !important;
     --table-hover-bg: rgba(253, 121, 168, 0.15) !important;
     --nav-link-color: #ffffff !important;
@@ -578,26 +642,37 @@ body.light-theme {
     --edit-btn: linear-gradient(45deg, #fd79a8, #e84393) !important;
     --delete-btn: linear-gradient(45deg, #e17055, #d63031) !important;
     --id-color: #74b9ff !important;
+    --pagination-bg: #f8f9fa !important;
+    --pagination-text: #6c757d !important;
+    --pagination-active-bg: #fd79a8 !important;
+    --pagination-active-text: #ffffff !important;
 }
 
 /* Neon Theme Specific */
 body.neon-theme {
     --bg-primary: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) !important;
     --text-primary: #00ff41 !important;
+    --text-secondary: rgba(0, 255, 65, 0.8) !important;
+    --text-muted: rgba(0, 255, 65, 0.6) !important;
     --accent-primary: #ff0080 !important;
     --card-bg: rgba(0, 255, 65, 0.1) !important;
+    --card-text: #00ff41 !important;
     --border-primary: #00ff41 !important;
     --glow-effect: 0 0 20px #00ff41 !important;
     --navbar-bg: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) !important;
     --navbar-border: #00ff41 !important;
     --search-bg: rgba(0, 255, 65, 0.1) !important;
+    --search-text: #00ff41 !important;
     --search-border: #00ff41 !important;
     --btn-bg: linear-gradient(45deg, #ff0080, #ff4081) !important;
     --btn-hover-shadow: 0 8px 25px rgba(255, 0, 128, 0.6) !important;
     --btn-shadow: 0 4px 15px rgba(255, 0, 128, 0.4) !important;
     --stats-bg: linear-gradient(45deg, #00ff41, #00e676) !important;
+    --stats-text: #000000 !important;
     --table-bg: rgba(0, 255, 65, 0.1) !important;
+    --table-text: #00ff41 !important;
     --table-header-bg: linear-gradient(135deg, #ff0080 0%, #ff4081 100%) !important;
+    --table-header-text: #ffffff !important;
     --table-border: #00ff41 !important;
     --table-hover-bg: rgba(255, 0, 128, 0.15) !important;
     --nav-link-color: #00ff41 !important;
@@ -610,6 +685,10 @@ body.neon-theme {
     --edit-btn: linear-gradient(45deg, #ff0080, #ff4081) !important;
     --delete-btn: linear-gradient(45deg, #ff1744, #f50057) !important;
     --id-color: #00ff41 !important;
+    --pagination-bg: #1a1a1a !important;
+    --pagination-text: #00ff41 !important;
+    --pagination-active-bg: #ff0080 !important;
+    --pagination-active-text: #ffffff !important;
 }
 
 body.neon-theme .main-container {
