@@ -296,6 +296,15 @@ class ThemeManager {
     setTheme(themeName) {
         if (this.themes[themeName]) {
             this.currentTheme = this.themes[themeName];
+            
+            // Remove all existing theme classes
+            document.body.className = document.body.className.replace(/theme-\w+/g, '');
+            
+            // Add new theme class if not default
+            if (themeName !== 'default') {
+                document.body.classList.add(`${themeName}-theme`);
+            }
+            
             this.applyTheme();
             localStorage.setItem('selectedTheme', themeName);
         }

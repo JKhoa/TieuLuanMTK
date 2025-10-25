@@ -76,7 +76,6 @@
         
         /* Button Styles */
         .btn-custom {
-            background: linear-gradient(45deg, #667eea, #764ba2);
             border: none;
             border-radius: 8px;
             padding: 12px 20px;
@@ -87,29 +86,18 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
         
         .btn-custom:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
             color: white;
         }
         
         .btn-outline-light {
-            border: 1px solid #475569;
-            color: #cbd5e1;
-            background: transparent;
             border-radius: 8px;
             padding: 8px 16px;
             font-weight: 500;
             transition: all 0.3s ease;
-        }
-        
-        .btn-outline-light:hover {
-            background: #475569;
-            color: white;
-            border-color: #475569;
         }
         
         .btn-danger-custom {
@@ -269,7 +257,6 @@
         }
         
         .stats-card {
-            background: linear-gradient(45deg, #667eea, #764ba2);
             border-radius: 15px;
             padding: 25px;
             color: white;
@@ -814,13 +801,7 @@
         }
         
         function changeTheme(themeName) {
-            // Update body class for theme-specific styles FIRST
-            document.body.className = document.body.className.replace(/theme-\w+/g, '');
-            if (themeName !== 'default') {
-                document.body.classList.add(`${themeName}-theme`);
-            }
-            
-            // Then apply theme through manager
+            // Apply theme through manager
             themeManager.setTheme(themeName);
             
             // Update active theme button
@@ -828,11 +809,6 @@
                 btn.classList.remove('active');
             });
             document.querySelector(`.theme-btn.${themeName}`).classList.add('active');
-            
-            // Force style recalculation
-            document.body.style.display = 'none';
-            document.body.offsetHeight; // Trigger reflow
-            document.body.style.display = '';
             
             // Show notification
             notificationManager.show(`Đã chuyển sang ${themeName} theme!`, 'success');
