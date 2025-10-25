@@ -42,6 +42,12 @@
     --pagination-hover-bg: #1f2937;
     --pagination-active-bg: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
     --pagination-active-text: #ffffff;
+    --btn-danger-bg: linear-gradient(45deg, #ef4444, #dc2626);
+    --btn-warning-bg: linear-gradient(45deg, #f59e0b, #d97706);
+    --btn-danger-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+    --btn-warning-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+    --btn-danger-hover-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+    --btn-warning-hover-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
 }
 
 /* Theme-specific styles */
@@ -447,6 +453,12 @@ body.dark-theme {
     --nav-link-color: #cccccc;
     --nav-link-hover-bg: rgba(255, 107, 107, 0.1);
     --nav-link-hover-color: #ff6b6b;
+    --btn-danger-bg: linear-gradient(45deg, #ff4757, #ff3742);
+    --btn-warning-bg: linear-gradient(45deg, #ffa502, #ff9500);
+    --btn-danger-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+    --btn-warning-shadow: 0 2px 8px rgba(255, 165, 2, 0.3);
+    --btn-danger-hover-shadow: 0 4px 12px rgba(255, 71, 87, 0.4);
+    --btn-warning-hover-shadow: 0 4px 12px rgba(255, 165, 2, 0.4);
 }
 
 /* Light Theme Specific */
@@ -490,6 +502,12 @@ body.light-theme {
     --pagination-hover-bg: #f8f9fa;
     --pagination-active-bg: #007bff;
     --pagination-active-text: #ffffff;
+    --btn-danger-bg: linear-gradient(45deg, #dc3545, #c82333);
+    --btn-warning-bg: linear-gradient(45deg, #ffc107, #e0a800);
+    --btn-danger-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+    --btn-warning-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+    --btn-danger-hover-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+    --btn-warning-hover-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
 }
 
 /* Neon Theme Specific */
@@ -515,6 +533,12 @@ body.neon-theme {
     --nav-link-color: #00ff00;
     --nav-link-hover-bg: rgba(255, 0, 255, 0.1);
     --nav-link-hover-color: #ff00ff;
+    --btn-danger-bg: linear-gradient(45deg, #ff1744, #f50057);
+    --btn-warning-bg: linear-gradient(45deg, #ffeb3b, #ffc107);
+    --btn-danger-shadow: 0 2px 8px rgba(255, 23, 68, 0.5);
+    --btn-warning-shadow: 0 2px 8px rgba(255, 235, 59, 0.5);
+    --btn-danger-hover-shadow: 0 4px 12px rgba(255, 23, 68, 0.7);
+    --btn-warning-hover-shadow: 0 4px 12px rgba(255, 235, 59, 0.7);
 }
 
 body.neon-theme .main-container {

@@ -27,7 +27,47 @@ class DarkThemeDecorator {
             textColor: '#ffffff',
             accent: '#ff6b6b',
             cardBackground: 'rgba(0, 0, 0, 0.9)',
-            borderColor: '#333333'
+            borderColor: '#333333',
+            navbarBg: 'linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)',
+            navbarBorder: '#444444',
+            searchBg: '#111111',
+            searchBorder: '#333333',
+            btnBg: 'linear-gradient(45deg, #ff6b6b, #ee5a52)',
+            btnHoverShadow: '0 8px 25px rgba(255, 107, 107, 0.4)',
+            btnShadow: '0 4px 15px rgba(255, 107, 107, 0.3)',
+            statsBg: 'linear-gradient(45deg, #ff6b6b, #ee5a52)',
+            statsText: '#ffffff',
+            tableBg: '#111111',
+            tableText: '#ffffff',
+            tableHeaderBg: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%)',
+            tableHeaderText: '#ffffff',
+            tableBorder: '#333333',
+            tableHoverBg: '#222222',
+            navLinkColor: '#cccccc',
+            navLinkHoverBg: 'rgba(255, 107, 107, 0.1)',
+            navLinkHoverColor: '#ff6b6b',
+            searchText: '#ffffff',
+            formText: '#ffffff',
+            formBg: '#111111',
+            formBorder: '#333333',
+            modalBg: '#111111',
+            modalText: '#ffffff',
+            modalHeaderBg: 'linear-gradient(45deg, #ff6b6b, #ee5a52)',
+            modalHeaderText: '#ffffff',
+            footerText: '#cccccc',
+            loadingText: '#ff6b6b',
+            paginationBg: '#111111',
+            paginationText: '#cccccc',
+            paginationBorder: '#333333',
+            paginationHoverBg: '#222222',
+            paginationActiveBg: '#ff6b6b',
+            paginationActiveText: '#ffffff',
+            btnDangerBg: 'linear-gradient(45deg, #ff4757, #ff3742)',
+            btnWarningBg: 'linear-gradient(45deg, #ffa502, #ff9500)',
+            btnDangerShadow: '0 2px 8px rgba(255, 71, 87, 0.3)',
+            btnWarningShadow: '0 2px 8px rgba(255, 165, 2, 0.3)',
+            btnDangerHoverShadow: '0 4px 12px rgba(255, 71, 87, 0.4)',
+            btnWarningHoverShadow: '0 4px 12px rgba(255, 165, 2, 0.4)'
         };
     }
 }
@@ -80,7 +120,13 @@ class LightThemeDecorator {
             paginationBorder: '#dee2e6',
             paginationHoverBg: '#f8f9fa',
             paginationActiveBg: '#007bff',
-            paginationActiveText: '#ffffff'
+            paginationActiveText: '#ffffff',
+            btnDangerBg: 'linear-gradient(45deg, #dc3545, #c82333)',
+            btnWarningBg: 'linear-gradient(45deg, #ffc107, #e0a800)',
+            btnDangerShadow: '0 2px 8px rgba(220, 53, 69, 0.3)',
+            btnWarningShadow: '0 2px 8px rgba(255, 193, 7, 0.3)',
+            btnDangerHoverShadow: '0 4px 12px rgba(220, 53, 69, 0.4)',
+            btnWarningHoverShadow: '0 4px 12px rgba(255, 193, 7, 0.4)'
         };
     }
 }
@@ -100,7 +146,47 @@ class NeonThemeDecorator {
             accent: '#ff00ff',
             cardBackground: 'rgba(0, 255, 0, 0.1)',
             borderColor: '#00ff00',
-            glow: '0 0 20px #00ff00'
+            glow: '0 0 20px #00ff00',
+            navbarBg: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)',
+            navbarBorder: '#00ff00',
+            searchBg: '#0a0a0a',
+            searchBorder: '#00ff00',
+            btnBg: 'linear-gradient(45deg, #ff00ff, #cc00cc)',
+            btnHoverShadow: '0 8px 25px rgba(255, 0, 255, 0.6)',
+            btnShadow: '0 4px 15px rgba(255, 0, 255, 0.4)',
+            statsBg: 'linear-gradient(45deg, #ff00ff, #cc00cc)',
+            statsText: '#000000',
+            tableBg: '#0a0a0a',
+            tableText: '#00ff00',
+            tableHeaderBg: 'linear-gradient(135deg, #ff00ff 0%, #cc00cc 100%)',
+            tableHeaderText: '#ffffff',
+            tableBorder: '#00ff00',
+            tableHoverBg: 'rgba(0, 255, 0, 0.1)',
+            navLinkColor: '#00ff00',
+            navLinkHoverBg: 'rgba(255, 0, 255, 0.1)',
+            navLinkHoverColor: '#ff00ff',
+            searchText: '#00ff00',
+            formText: '#00ff00',
+            formBg: '#0a0a0a',
+            formBorder: '#00ff00',
+            modalBg: '#0a0a0a',
+            modalText: '#00ff00',
+            modalHeaderBg: 'linear-gradient(45deg, #ff00ff, #cc00cc)',
+            modalHeaderText: '#ffffff',
+            footerText: '#00ff00',
+            loadingText: '#ff00ff',
+            paginationBg: '#0a0a0a',
+            paginationText: '#00ff00',
+            paginationBorder: '#00ff00',
+            paginationHoverBg: 'rgba(0, 255, 0, 0.1)',
+            paginationActiveBg: '#ff00ff',
+            paginationActiveText: '#ffffff',
+            btnDangerBg: 'linear-gradient(45deg, #ff1744, #f50057)',
+            btnWarningBg: 'linear-gradient(45deg, #ffeb3b, #ffc107)',
+            btnDangerShadow: '0 2px 8px rgba(255, 23, 68, 0.5)',
+            btnWarningShadow: '0 2px 8px rgba(255, 235, 59, 0.5)',
+            btnDangerHoverShadow: '0 4px 12px rgba(255, 23, 68, 0.7)',
+            btnWarningHoverShadow: '0 4px 12px rgba(255, 235, 59, 0.7)'
         };
     }
 }
@@ -445,6 +531,12 @@ class ThemeManager {
             if (theme.paginationHoverBg) root.style.setProperty('--pagination-hover-bg', theme.paginationHoverBg);
             if (theme.paginationActiveBg) root.style.setProperty('--pagination-active-bg', theme.paginationActiveBg);
             if (theme.paginationActiveText) root.style.setProperty('--pagination-active-text', theme.paginationActiveText);
+            if (theme.btnDangerBg) root.style.setProperty('--btn-danger-bg', theme.btnDangerBg);
+            if (theme.btnWarningBg) root.style.setProperty('--btn-warning-bg', theme.btnWarningBg);
+            if (theme.btnDangerShadow) root.style.setProperty('--btn-danger-shadow', theme.btnDangerShadow);
+            if (theme.btnWarningShadow) root.style.setProperty('--btn-warning-shadow', theme.btnWarningShadow);
+            if (theme.btnDangerHoverShadow) root.style.setProperty('--btn-danger-hover-shadow', theme.btnDangerHoverShadow);
+            if (theme.btnWarningHoverShadow) root.style.setProperty('--btn-warning-hover-shadow', theme.btnWarningHoverShadow);
         }, 50);
     }
     
