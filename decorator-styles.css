@@ -23,6 +23,13 @@
     --nav-link-color: #cbd5e1;
     --nav-link-hover-bg: rgba(102, 126, 234, 0.1);
     --nav-link-hover-color: #667eea;
+    --gpa-excellent: linear-gradient(45deg, #10b981, #059669);
+    --gpa-good: linear-gradient(45deg, #f59e0b, #d97706);
+    --gpa-poor: linear-gradient(45deg, #ef4444, #dc2626);
+    --class-badge: linear-gradient(45deg, #3b82f6, #1d4ed8);
+    --edit-btn: linear-gradient(45deg, #f59e0b, #d97706);
+    --delete-btn: linear-gradient(45deg, #ef4444, #dc2626);
+    --id-color: #667eea;
 }
 
 /* Theme-specific styles */
@@ -93,6 +100,38 @@ body {
 .nav-link:hover {
     background: var(--nav-link-hover-bg) !important;
     color: var(--nav-link-hover-color) !important;
+}
+
+/* GPA Badge Colors */
+.gpa-excellent {
+    background: var(--gpa-excellent) !important;
+}
+
+.gpa-good {
+    background: var(--gpa-good) !important;
+}
+
+.gpa-poor {
+    background: var(--gpa-poor) !important;
+}
+
+/* Class Badge */
+.class-badge {
+    background: var(--class-badge) !important;
+}
+
+/* Action Buttons */
+.edit-btn {
+    background: var(--edit-btn) !important;
+}
+
+.delete-btn {
+    background: var(--delete-btn) !important;
+}
+
+/* ID Color */
+.student-id {
+    color: var(--id-color) !important;
 }
 
 /* Toast Notifications */
@@ -352,6 +391,13 @@ body.dark-theme {
     --nav-link-color: #cccccc;
     --nav-link-hover-bg: rgba(255, 107, 107, 0.1);
     --nav-link-hover-color: #ff6b6b;
+    --gpa-excellent: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    --gpa-good: linear-gradient(45deg, #ffa726, #ff9800);
+    --gpa-poor: linear-gradient(45deg, #f44336, #d32f2f);
+    --class-badge: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    --edit-btn: linear-gradient(45deg, #ffa726, #ff9800);
+    --delete-btn: linear-gradient(45deg, #f44336, #d32f2f);
+    --id-color: #ff6b6b;
 }
 
 /* Light Theme Specific */
@@ -376,6 +422,13 @@ body.light-theme {
     --nav-link-color: #6c757d;
     --nav-link-hover-bg: rgba(0, 123, 255, 0.1);
     --nav-link-hover-color: #007bff;
+    --gpa-excellent: linear-gradient(45deg, #28a745, #20c997);
+    --gpa-good: linear-gradient(45deg, #ffc107, #fd7e14);
+    --gpa-poor: linear-gradient(45deg, #dc3545, #c82333);
+    --class-badge: linear-gradient(45deg, #007bff, #0056b3);
+    --edit-btn: linear-gradient(45deg, #ffc107, #fd7e14);
+    --delete-btn: linear-gradient(45deg, #dc3545, #c82333);
+    --id-color: #007bff;
 }
 
 /* Neon Theme Specific */
@@ -401,6 +454,13 @@ body.neon-theme {
     --nav-link-color: #00ff00;
     --nav-link-hover-bg: rgba(255, 0, 255, 0.1);
     --nav-link-hover-color: #ff00ff;
+    --gpa-excellent: linear-gradient(45deg, #00ff00, #00cc00);
+    --gpa-good: linear-gradient(45deg, #ffff00, #ffcc00);
+    --gpa-poor: linear-gradient(45deg, #ff0000, #cc0000);
+    --class-badge: linear-gradient(45deg, #00ffff, #00cccc);
+    --edit-btn: linear-gradient(45deg, #ffff00, #ffcc00);
+    --delete-btn: linear-gradient(45deg, #ff0000, #cc0000);
+    --id-color: #00ffff;
 }
 
 body.neon-theme .main-container {

@@ -314,6 +314,9 @@ class ThemeManager {
         const theme = this.currentTheme.apply();
         const root = document.documentElement;
         
+        // Force remove all existing theme classes first
+        document.body.classList.remove('dark-theme', 'light-theme', 'neon-theme');
+        
         root.style.setProperty('--bg-primary', theme.background);
         root.style.setProperty('--text-primary', theme.textColor);
         root.style.setProperty('--accent-primary', theme.accent);
@@ -322,7 +325,12 @@ class ThemeManager {
         
         if (theme.glow) {
             root.style.setProperty('--glow-effect', theme.glow);
+        } else {
+            root.style.setProperty('--glow-effect', 'none');
         }
+        
+        // Force style recalculation
+        document.body.offsetHeight;
     }
     
     loadSavedTheme() {

@@ -556,10 +556,10 @@
             document.getElementById('classFilter').addEventListener('change', filterAndPaginateStudents);
         });
 
-        function getGPABadgeColor(gpa) {
-            if (gpa >= 3.5) return 'linear-gradient(45deg, #10b981, #059669)';
-            if (gpa >= 3.0) return 'linear-gradient(45deg, #f59e0b, #d97706)';
-            return 'linear-gradient(45deg, #ef4444, #dc2626)';
+        function getGPABadgeClass(gpa) {
+            if (gpa >= 3.5) return 'gpa-excellent';
+            if (gpa >= 3.0) return 'gpa-good';
+            return 'gpa-poor';
         }
 
         async function loadStudents() {
@@ -595,21 +595,21 @@
             studentsToShow.forEach(student => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td class="fw-bold" style="color: #667eea;">${student.id}</td>
-                    <td class="fw-semibold" style="color: #e2e8f0;">${student.name}</td>
-                    <td><span class="badge" style="background: linear-gradient(45deg, #3b82f6, #1d4ed8); color: white; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem;">${student.class_name}</span></td>
+                    <td class="fw-bold student-id">${student.id}</td>
+                    <td class="fw-semibold">${student.name}</td>
+                    <td><span class="badge class-badge" style="color: white; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem;">${student.class_name}</span></td>
                     <td>
-                        <span class="badge" style="background: ${getGPABadgeColor(student.gpa)}; color: white; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">
+                        <span class="badge ${getGPABadgeClass(student.gpa)}" style="color: white; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">
                             ${student.gpa.toFixed(2)}
                         </span>
                     </td>
                     <td class="text-end">
-                        <button class="btn btn-warning-custom btn-sm me-2" 
-                                onclick="editStudent(${student.id})" title="Edit">
+                        <button class="btn edit-btn btn-sm me-2" 
+                                onclick="editStudent(${student.id})" title="Edit" style="color: white; border: none; padding: 6px 12px; border-radius: 6px;">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <button class="btn btn-danger-custom btn-sm" 
-                                onclick="deleteStudent(${student.id})" title="Delete">
+                        <button class="btn delete-btn btn-sm" 
+                                onclick="deleteStudent(${student.id})" title="Delete" style="color: white; border: none; padding: 6px 12px; border-radius: 6px;">
                             <i class="fas fa-trash"></i>
                         </button>
                     </td>
