@@ -2,33 +2,33 @@
 
 /* CSS Variables for Theme Support */
 :root {
-    --bg-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    --text-primary: #e2e8f0;
-    --accent-primary: #667eea;
-    --card-bg: rgba(30, 41, 59, 0.98);
-    --border-primary: #334155;
+    --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --text-primary: #ffffff;
+    --accent-primary: #f093fb;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --border-primary: #e2e8f0;
     --glow-effect: none;
-    --navbar-bg: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    --navbar-border: #475569;
-    --search-bg: #0f172a;
-    --search-border: #334155;
-    --btn-bg: linear-gradient(45deg, #667eea, #764ba2);
-    --btn-hover-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-    --btn-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-    --stats-bg: linear-gradient(45deg, #667eea, #764ba2);
-    --table-bg: #0f172a;
-    --table-header-bg: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    --table-border: #334155;
-    --table-hover-bg: #1f2937;
-    --nav-link-color: #cbd5e1;
-    --nav-link-hover-bg: rgba(102, 126, 234, 0.1);
-    --nav-link-hover-color: #667eea;
-    --gpa-excellent: linear-gradient(45deg, #10b981, #059669);
-    --gpa-good: linear-gradient(45deg, #f59e0b, #d97706);
-    --gpa-poor: linear-gradient(45deg, #ef4444, #dc2626);
-    --class-badge: linear-gradient(45deg, #3b82f6, #1d4ed8);
-    --edit-btn: linear-gradient(45deg, #f59e0b, #d97706);
-    --delete-btn: linear-gradient(45deg, #ef4444, #dc2626);
+    --navbar-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --navbar-border: #f093fb;
+    --search-bg: rgba(255, 255, 255, 0.9);
+    --search-border: #f093fb;
+    --btn-bg: linear-gradient(45deg, #f093fb, #f5576c);
+    --btn-hover-shadow: 0 8px 25px rgba(240, 147, 251, 0.4);
+    --btn-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+    --stats-bg: linear-gradient(45deg, #4facfe, #00f2fe);
+    --table-bg: rgba(255, 255, 255, 0.95);
+    --table-header-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --table-border: #e2e8f0;
+    --table-hover-bg: rgba(240, 147, 251, 0.1);
+    --nav-link-color: #ffffff;
+    --nav-link-hover-bg: rgba(240, 147, 251, 0.2);
+    --nav-link-hover-color: #f093fb;
+    --gpa-excellent: linear-gradient(45deg, #4facfe, #00f2fe);
+    --gpa-good: linear-gradient(45deg, #f093fb, #f5576c);
+    --gpa-poor: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    --class-badge: linear-gradient(45deg, #667eea, #764ba2);
+    --edit-btn: linear-gradient(45deg, #f093fb, #f5576c);
+    --delete-btn: linear-gradient(45deg, #ff6b6b, #ee5a52);
     --id-color: #667eea;
 }
 
@@ -90,6 +90,20 @@ body {
 }
 
 .table-custom tbody tr:hover {
+    background: var(--table-hover-bg) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.table-custom tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table-custom tbody tr:nth-child(even) {
+    background: var(--table-bg) !important;
+}
+
+.table-custom tbody tr:nth-child(even):hover {
     background: var(--table-hover-bg) !important;
 }
 
@@ -371,95 +385,95 @@ body {
 
 /* Dark Theme Specific */
 body.dark-theme {
-    --bg-primary: #000000;
-    --text-primary: #ffffff;
+    --bg-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    --text-primary: #e2e8f0;
     --accent-primary: #ff6b6b;
-    --card-bg: rgba(0, 0, 0, 0.9);
-    --border-primary: #333333;
-    --navbar-bg: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-    --navbar-border: #444444;
-    --search-bg: #111111;
-    --search-border: #333333;
+    --card-bg: rgba(30, 41, 59, 0.95);
+    --border-primary: #475569;
+    --navbar-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    --navbar-border: #ff6b6b;
+    --search-bg: rgba(30, 41, 59, 0.9);
+    --search-border: #ff6b6b;
     --btn-bg: linear-gradient(45deg, #ff6b6b, #ee5a52);
     --btn-hover-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
     --btn-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
     --stats-bg: linear-gradient(45deg, #ff6b6b, #ee5a52);
-    --table-bg: #111111;
-    --table-header-bg: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
-    --table-border: #333333;
-    --table-hover-bg: #222222;
-    --nav-link-color: #cccccc;
+    --table-bg: rgba(30, 41, 59, 0.95);
+    --table-header-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    --table-border: #475569;
+    --table-hover-bg: rgba(255, 107, 107, 0.1);
+    --nav-link-color: #e2e8f0;
     --nav-link-hover-bg: rgba(255, 107, 107, 0.1);
     --nav-link-hover-color: #ff6b6b;
-    --gpa-excellent: linear-gradient(45deg, #ff6b6b, #ee5a52);
-    --gpa-good: linear-gradient(45deg, #ffa726, #ff9800);
-    --gpa-poor: linear-gradient(45deg, #f44336, #d32f2f);
-    --class-badge: linear-gradient(45deg, #ff6b6b, #ee5a52);
-    --edit-btn: linear-gradient(45deg, #ffa726, #ff9800);
-    --delete-btn: linear-gradient(45deg, #f44336, #d32f2f);
+    --gpa-excellent: linear-gradient(45deg, #10b981, #059669);
+    --gpa-good: linear-gradient(45deg, #f59e0b, #d97706);
+    --gpa-poor: linear-gradient(45deg, #ef4444, #dc2626);
+    --class-badge: linear-gradient(45deg, #3b82f6, #1d4ed8);
+    --edit-btn: linear-gradient(45deg, #f59e0b, #d97706);
+    --delete-btn: linear-gradient(45deg, #ef4444, #dc2626);
     --id-color: #ff6b6b;
 }
 
 /* Light Theme Specific */
 body.light-theme {
-    --bg-primary: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    --text-primary: #212529;
-    --accent-primary: #007bff;
+    --bg-primary: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    --text-primary: #2d3436;
+    --accent-primary: #fd79a8;
     --card-bg: rgba(255, 255, 255, 0.95);
-    --border-primary: #dee2e6;
-    --navbar-bg: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    --navbar-border: #dee2e6;
-    --search-bg: #ffffff;
-    --search-border: #dee2e6;
-    --btn-bg: linear-gradient(45deg, #007bff, #0056b3);
-    --btn-hover-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
-    --btn-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-    --stats-bg: linear-gradient(45deg, #007bff, #0056b3);
-    --table-bg: #ffffff;
-    --table-header-bg: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-    --table-border: #dee2e6;
-    --table-hover-bg: #f8f9fa;
-    --nav-link-color: #6c757d;
-    --nav-link-hover-bg: rgba(0, 123, 255, 0.1);
-    --nav-link-hover-color: #007bff;
-    --gpa-excellent: linear-gradient(45deg, #28a745, #20c997);
-    --gpa-good: linear-gradient(45deg, #ffc107, #fd7e14);
-    --gpa-poor: linear-gradient(45deg, #dc3545, #c82333);
-    --class-badge: linear-gradient(45deg, #007bff, #0056b3);
-    --edit-btn: linear-gradient(45deg, #ffc107, #fd7e14);
-    --delete-btn: linear-gradient(45deg, #dc3545, #c82333);
-    --id-color: #007bff;
+    --border-primary: #ddd;
+    --navbar-bg: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    --navbar-border: #fd79a8;
+    --search-bg: rgba(255, 255, 255, 0.9);
+    --search-border: #fd79a8;
+    --btn-bg: linear-gradient(45deg, #fd79a8, #e84393);
+    --btn-hover-shadow: 0 8px 25px rgba(253, 121, 168, 0.4);
+    --btn-shadow: 0 4px 15px rgba(253, 121, 168, 0.3);
+    --stats-bg: linear-gradient(45deg, #00b894, #00cec9);
+    --table-bg: rgba(255, 255, 255, 0.95);
+    --table-header-bg: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    --table-border: #ddd;
+    --table-hover-bg: rgba(253, 121, 168, 0.1);
+    --nav-link-color: #ffffff;
+    --nav-link-hover-bg: rgba(253, 121, 168, 0.2);
+    --nav-link-hover-color: #fd79a8;
+    --gpa-excellent: linear-gradient(45deg, #00b894, #00cec9);
+    --gpa-good: linear-gradient(45deg, #fdcb6e, #e17055);
+    --gpa-poor: linear-gradient(45deg, #e17055, #d63031);
+    --class-badge: linear-gradient(45deg, #74b9ff, #0984e3);
+    --edit-btn: linear-gradient(45deg, #fdcb6e, #e17055);
+    --delete-btn: linear-gradient(45deg, #e17055, #d63031);
+    --id-color: #74b9ff;
 }
 
 /* Neon Theme Specific */
 body.neon-theme {
-    --bg-primary: #0a0a0a;
-    --text-primary: #00ff00;
-    --accent-primary: #ff00ff;
-    --card-bg: rgba(0, 255, 0, 0.1);
-    --border-primary: #00ff00;
-    --glow-effect: 0 0 20px #00ff00;
+    --bg-primary: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    --text-primary: #00ff41;
+    --accent-primary: #ff0080;
+    --card-bg: rgba(0, 255, 65, 0.1);
+    --border-primary: #00ff41;
+    --glow-effect: 0 0 20px #00ff41;
     --navbar-bg: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    --navbar-border: #00ff00;
-    --search-bg: #0a0a0a;
-    --search-border: #00ff00;
-    --btn-bg: linear-gradient(45deg, #ff00ff, #cc00cc);
-    --btn-hover-shadow: 0 8px 25px rgba(255, 0, 255, 0.6);
-    --btn-shadow: 0 4px 15px rgba(255, 0, 255, 0.4);
-    --stats-bg: linear-gradient(45deg, #ff00ff, #cc00cc);
-    --table-bg: #0a0a0a;
-    --table-header-bg: linear-gradient(135deg, #ff00ff 0%, #cc00cc 100%);
-    --table-border: #00ff00;
-    --table-hover-bg: rgba(0, 255, 0, 0.1);
-    --nav-link-color: #00ff00;
-    --nav-link-hover-bg: rgba(255, 0, 255, 0.1);
-    --nav-link-hover-color: #ff00ff;
-    --gpa-excellent: linear-gradient(45deg, #00ff00, #00cc00);
-    --gpa-good: linear-gradient(45deg, #ffff00, #ffcc00);
-    --gpa-poor: linear-gradient(45deg, #ff0000, #cc0000);
-    --class-badge: linear-gradient(45deg, #00ffff, #00cccc);
-    --edit-btn: linear-gradient(45deg, #ffff00, #ffcc00);
-    --delete-btn: linear-gradient(45deg, #ff0000, #cc0000);
+    --navbar-border: #00ff41;
+    --search-bg: rgba(0, 255, 65, 0.1);
+    --search-border: #00ff41;
+    --btn-bg: linear-gradient(45deg, #ff0080, #ff4081);
+    --btn-hover-shadow: 0 8px 25px rgba(255, 0, 128, 0.6);
+    --btn-shadow: 0 4px 15px rgba(255, 0, 128, 0.4);
+    --stats-bg: linear-gradient(45deg, #00ff41, #00e676);
+    --table-bg: rgba(0, 255, 65, 0.1);
+    --table-header-bg: linear-gradient(135deg, #ff0080 0%, #ff4081 100%);
+    --table-border: #00ff41;
+    --table-hover-bg: rgba(255, 0, 128, 0.1);
+    --nav-link-color: #00ff41;
+    --nav-link-hover-bg: rgba(255, 0, 128, 0.1);
+    --nav-link-hover-color: #ff0080;
+    --gpa-excellent: linear-gradient(45deg, #00ff41, #00e676);
+    --gpa-good: linear-gradient(45deg, #ffff00, #ffeb3b);
+    --gpa-poor: linear-gradient(45deg, #ff1744, #f50057);
+    --class-badge: linear-gradient(45deg, #00ffff, #00bcd4);
+    --edit-btn: linear-gradient(45deg, #ffff00, #ffeb3b);
+    --delete-btn: linear-gradient(45deg, #ff1744, #f50057);
     --id-color: #00ffff;
 }
 
